@@ -16,20 +16,7 @@
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/highlight.pack.js"></script>
 <script>
-    $('h1').each(function() {
-        $(this).wrap('<section id="' + this.id + '"/>');
-    });
-
-    $('h1').wrap('<div class="page-header" />');
-    $('h1').wrap('<div class="well well-small" />');
-
     $(document).ready(function() {
-        var items = [];
-        $('h1').each(function() {
-            items.push('<li><a href="#' + this.id + '"><i class="fa fa-chevron-right pull-right"></i> ' + $(this).text() + '</a></li>');
-        });  // close each()
-
-    $('#sidebar_list').append( items.join('') );
 
     $('table').each(function() {
         $(this).addClass('table table-striped table-condensed table-hover');
@@ -64,10 +51,11 @@
         $(this).html('<code>'+$(this).html()+'</code>');
     });
     hljs.initHighlightingOnLoad();
+
 });
 </script>
 </head>
-<body data-spy="scroll" data-target=".bs-docs-sidebar" style='background-image: url("images/background.jpg")'>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
 <!--navbor-->
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
@@ -100,7 +88,7 @@
 <!--Container-->
 <div class="container-fluid">
     <div class="row-fluid">
-        <div class="span3 bs-docs-sidebar">
+        <div class="span3 bs-docs-sidebar" id = "toc">
             <ul id="sidebar_list" class="nav nav-list bs-docs-sidenav affix">
             </ul>
         </div>
@@ -108,13 +96,18 @@
         <div class="span7">
             <!--Body content-->
             
-<h2 id="toc_0.1">Workspace</h2>
-<h2 id="toc_0.2">Diary</h2>
-<h2 id="toc_0.3">ToDoo</h2>
+<h1 id="toc_1">hello</h1>
+<h2 id="toc_1.1">helllo</h2>
+<h3 id="toc_1.1.1">hello</h3>
+<h4 id="toc_1.1.1.1">h3llo</h4>
+<h2 id="toc_1.2">Workspace</h2>
+<h2 id="toc_1.3">Diary</h2>
+<h2 id="toc_1.4">ToDoo</h2>
 <p>
 <a href="../diary/">Directory</a>
 </p>
- 
+
+<h1 id="toc_2">hello</h1>
 <hr />
 
 <p>
@@ -122,6 +115,7 @@
 <a href="file://E:\chao_data\vimwiki/this is a link">local:this is a link</a>
 <a href="diary/this is a link.html">diary:this is a link</a>
 </p>
+
 <table class='center'>
 <tr>
 <th>
@@ -184,6 +178,507 @@ Temperature (high)
 </td>
 </tr>
 </table>
+<h1 id="toc_3">hello</h1>
+<h1 id="toc_4">hello</h1>
+<h1 id="toc_5">hello</h1>
+<h1 id="toc_6">hello</h1>
+<h1 id="toc_7">hello</h1>
+<h1 id="toc_8">hello</h1>
+<h2 id="toc_8.1">helllo</h2>
+<h3 id="toc_8.1.1">hello</h3>
+<h4 id="toc_8.1.1.1">h3llo</h4>
+<h2 id="toc_8.2">Workspace</h2>
+<h2 id="toc_8.3">Diary</h2>
+<h2 id="toc_8.4">ToDoo</h2>
+<p>
+<a href="../diary/">Directory</a>
+</p>
+
+<h1 id="toc_9">hello</h1>
+<hr />
+
+<p>
+<a href="E:\chao_data\vimwiki\html/this is a link.html">wiki0:this is a link</a>
+<a href="file://E:\chao_data\vimwiki/this is a link">local:this is a link</a>
+<a href="diary/this is a link.html">diary:this is a link</a>
+</p>
+
+<table class='center'>
+<tr>
+<th>
+Year
+</th>
+<th>
+Temperature (low)
+</th>
+<th>
+Temperature (high)
+</th>
+</tr>
+<tr>
+<td>
+1900
+</td>
+</tr>
+<tr>
+<td>
+1910
+</td>
+<td>
+-15
+</td>
+<td>
+30
+</td>
+</tr>
+<tr>
+<td>
+1920
+</td>
+<td>
+-10
+</td>
+<td>
+32
+</td>
+</tr>
+<tr>
+<td>
+1930
+</td>
+<td>
+<em>N/A</em>
+</td>
+<td>
+<em>N/A</em>
+</td>
+</tr>
+<tr>
+<td>
+1940
+</td>
+<td>
+-2
+</td>
+<td>
+40
+</td>
+</tr>
+</table>
+<h1 id="toc_10">hello</h1>
+<h2 id="toc_10.1">helllo</h2>
+<h3 id="toc_10.1.1">hello</h3>
+<h4 id="toc_10.1.1.1">h3llo</h4>
+<h2 id="toc_10.2">Workspace</h2>
+<h2 id="toc_10.3">Diary</h2>
+<h2 id="toc_10.4">ToDoo</h2>
+<p>
+<a href="../diary/">Directory</a>
+</p>
+
+<h1 id="toc_11">hello</h1>
+<hr />
+
+<p>
+<a href="E:\chao_data\vimwiki\html/this is a link.html">wiki0:this is a link</a>
+<a href="file://E:\chao_data\vimwiki/this is a link">local:this is a link</a>
+</p>
+<h1 id="toc_12">hello</h1>
+<h2 id="toc_12.1">helllo</h2>
+<h3 id="toc_12.1.1">hello</h3>
+<h4 id="toc_12.1.1.1">h3llo</h4>
+<h2 id="toc_12.2">Workspace</h2>
+<h2 id="toc_12.3">Diary</h2>
+<h2 id="toc_12.4">ToDoo</h2>
+<p>
+<a href="../diary/">Directory</a>
+</p>
+
+<h1 id="toc_13">hello</h1>
+<hr />
+
+<p>
+<a href="E:\chao_data\vimwiki\html/this is a link.html">wiki0:this is a link</a>
+<a href="file://E:\chao_data\vimwiki/this is a link">local:this is a link</a>
+<a href="diary/this is a link.html">diary:this is a link</a>
+</p>
+
+<table class='center'>
+<tr>
+<th>
+Year
+</th>
+<th>
+Temperature (low)
+</th>
+<th>
+Temperature (high)
+</th>
+</tr>
+<tr>
+<td>
+1900
+</td>
+</tr>
+<tr>
+<td>
+1910
+</td>
+<td>
+-15
+</td>
+<td>
+30
+</td>
+</tr>
+<tr>
+<td>
+1920
+</td>
+<td>
+-10
+</td>
+<td>
+32
+</td>
+</tr>
+<tr>
+<td>
+1930
+</td>
+<td>
+<em>N/A</em>
+</td>
+<td>
+<em>N/A</em>
+</td>
+</tr>
+<tr>
+<td>
+1940
+</td>
+<td>
+-2
+</td>
+<td>
+40
+</td>
+</tr>
+</table>
+<h1 id="toc_14">hello</h1>
+<p>
+<a href="diary/this is a link.html">diary:this is a link</a>
+</p>
+
+<table class='center'>
+<tr>
+<th>
+Year
+</th>
+<th>
+Temperature (low)
+</th>
+<th>
+Temperature (high)
+</th>
+</tr>
+<tr>
+<td>
+1900
+</td>
+</tr>
+<tr>
+<td>
+1910
+</td>
+<td>
+-15
+</td>
+<td>
+30
+</td>
+</tr>
+<tr>
+<td>
+1920
+</td>
+<td>
+-10
+</td>
+<td>
+32
+</td>
+</tr>
+<tr>
+<td>
+1930
+</td>
+<td>
+<em>N/A</em>
+</td>
+<td>
+<em>N/A</em>
+</td>
+</tr>
+<tr>
+<td>
+1940
+</td>
+<td>
+-2
+</td>
+<td>
+40
+</td>
+</tr>
+</table>
+<h1 id="toc_15">hello</h1>
+<h2 id="toc_15.1">helllo</h2>
+<h3 id="toc_15.1.1">hello</h3>
+<h4 id="toc_15.1.1.1">h3llo</h4>
+<h2 id="toc_15.2">Workspace</h2>
+<h2 id="toc_15.3">Diary</h2>
+<h2 id="toc_15.4">ToDoo</h2>
+<p>
+<a href="../diary/">Directory</a>
+</p>
+
+<h1 id="toc_16">hello</h1>
+<hr />
+
+<p>
+<a href="E:\chao_data\vimwiki\html/this is a link.html">wiki0:this is a link</a>
+<a href="file://E:\chao_data\vimwiki/this is a link">local:this is a link</a>
+<a href="diary/this is a link.html">diary:this is a link</a>
+</p>
+
+<table class='center'>
+<tr>
+<th>
+Year
+</th>
+<th>
+Temperature (low)
+</th>
+<th>
+Temperature (high)
+</th>
+</tr>
+<tr>
+<td>
+1900
+</td>
+</tr>
+<tr>
+<td>
+1910
+</td>
+<td>
+-15
+</td>
+<td>
+30
+</td>
+</tr>
+<tr>
+<td>
+1920
+</td>
+<td>
+-10
+</td>
+<td>
+32
+</td>
+</tr>
+<tr>
+<td>
+1930
+</td>
+<td>
+<em>N/A</em>
+</td>
+<td>
+<em>N/A</em>
+</td>
+</tr>
+<tr>
+<td>
+1940
+</td>
+<td>
+-2
+</td>
+<td>
+40
+</td>
+</tr>
+</table>
+<h1 id="toc_17">hello</h1>
+<h2 id="toc_17.1">helllo</h2>
+<h3 id="toc_17.1.1">hello</h3>
+<h4 id="toc_17.1.1.1">h3llo</h4>
+<h2 id="toc_17.2">Workspace</h2>
+<h2 id="toc_17.3">Diary</h2>
+<h2 id="toc_17.4">ToDoo</h2>
+<p>
+<a href="../diary/">Directory</a>
+</p>
+
+<h1 id="toc_18">hello</h1>
+<hr />
+
+<p>
+<a href="E:\chao_data\vimwiki\html/this is a link.html">wiki0:this is a link</a>
+<a href="file://E:\chao_data\vimwiki/this is a link">local:this is a link</a>
+<a href="diary/this is a link.html">diary:this is a link</a>
+</p>
+
+<table class='center'>
+<tr>
+<th>
+Year
+</th>
+<th>
+Temperature (low)
+</th>
+<th>
+Temperature (high)
+</th>
+</tr>
+<tr>
+<td>
+1900
+</td>
+</tr>
+<tr>
+<td>
+1910
+</td>
+<td>
+-15
+</td>
+<td>
+30
+</td>
+</tr>
+<tr>
+<td>
+1920
+</td>
+<td>
+-10
+</td>
+<td>
+32
+</td>
+</tr>
+<tr>
+<td>
+1930
+</td>
+<td>
+<em>N/A</em>
+</td>
+<td>
+<em>N/A</em>
+</td>
+</tr>
+<tr>
+<td>
+1940
+</td>
+<td>
+-2
+</td>
+<td>
+40
+</td>
+</tr>
+</table>
+<h1 id="toc_19">hello</h1>
+<h2 id="toc_19.1">helllo</h2>
+<h3 id="toc_19.1.1">hello</h3>
+<h4 id="toc_19.1.1.1">h3llo</h4>
+<h2 id="toc_19.2">Workspace</h2>
+<h2 id="toc_19.3">Diary</h2>
+<h2 id="toc_19.4">ToDoo</h2>
+<p>
+<a href="../diary/">Directory</a>
+</p>
+
+<h1 id="toc_20">hello</h1>
+<hr />
+
+<p>
+<a href="E:\chao_data\vimwiki\html/this is a link.html">wiki0:this is a link</a>
+<a href="file://E:\chao_data\vimwiki/this is a link">local:this is a link</a>
+<a href="diary/this is a link.html">diary:this is a link</a>
+</p>
+
+<table class='center'>
+<tr>
+<th>
+Year
+</th>
+<th>
+Temperature (low)
+</th>
+<th>
+Temperature (high)
+</th>
+</tr>
+<tr>
+<td>
+1900
+</td>
+</tr>
+<tr>
+<td>
+1910
+</td>
+<td>
+-15
+</td>
+<td>
+30
+</td>
+</tr>
+<tr>
+<td>
+1920
+</td>
+<td>
+-10
+</td>
+<td>
+32
+</td>
+</tr>
+<tr>
+<td>
+1930
+</td>
+<td>
+<em>N/A</em>
+</td>
+<td>
+<em>N/A</em>
+</td>
+</tr>
+<tr>
+<td>
+1940
+</td>
+<td>
+-2
+</td>
+<td>
+40
+</td>
+</tr>
+</table>
+<h1 id="toc_21">hello</h1>
 
         </div>
   </div>
@@ -192,7 +687,7 @@ Temperature (high)
 
 <!-- Footer
     ================================================== -->
-<footer class="footer navbar-fixed-bottom">
+<footer class="footer navbar-bottom">
   <div class="container">
     <p><a href="https://github.com/UglyMelon007/uglymelon007.github.com">Copyright2016 @ UglyMelon007</a>
   </div>
