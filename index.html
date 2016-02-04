@@ -1,696 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>index</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>UglyMelon007</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
-<link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.css" />
-<link type="text/css" rel="stylesheet" href="css/docs.css" />
-<link type="text/css" rel="stylesheet" href="css/monokai.css" />
-<link type="text/css" rel="stylesheet" href="css/vimwiki.css" />
-<link type="text/css" rel="stylesheet" href="css/font-awesome.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.css" />
+    <link type="text/css" rel="stylesheet" href="css/docs.css" />
+    <link type="text/css" rel="stylesheet" href="css/monokai.css" />
+    <link type="text/css" rel="stylesheet" href="css/vimwiki.css" />
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.css">
 
-<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
-<script type="text/javascript" src="js/highlight.pack.js"></script>
-<script>
-    $(document).ready(function() {
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/highlight.pack.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('table').each(function() {
+                $(this).addClass('table table-striped table-condensed table-hover');
+            });
 
-    $('table').each(function() {
-        $(this).addClass('table table-striped table-condensed table-hover');
-    });
+            $('.done0').each(function() {
+                $(this).html('<div class="alert alert-info"><i class="fa fa-check-square-o"></i>' + $(this).html() + '</div></li>');
+            });
 
-    $('.done0').each(function() {
-        $(this).html('<div class="alert alert-info"><i class="fa fa-check-square-o"></i>'+$(this).html()+'</div></li>');
-    });
+            $('.done4').each(function() {
+                $(this).html('<div class="alert alert-success"><i class="fa fa-square-o"></i>' + $(this).html() + '</div></li>');
+            });
 
-    $('.done4').each(function() {
-        $(this).html('<div class="alert alert-success"><i class="fa fa-square-o"></i>'+$(this).html()+'</div></li>');
-    });
-
-    // Fade Out Back-To-Top-Link on new page
-    $('.backtotop').fadeOut();
-
-    $(document).ready(function(){
-        $(window).scroll(function(){
-            if ($(this).scrollTop() > 100) {
-                $('.backtotop').fadeIn();
-            } else {
-                $('.backtotop').fadeOut();
-            }
+            // Fade Out Back-To-Top-Link on new page
+            $('.backtotop').fadeOut();
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('.backtotop').fadeIn();
+                } else {
+                    $('.backtotop').fadeOut();
+                }
+            });
+            $('.backtotop').click(function() {
+                $("html, body").animate({
+                    scrollTop: 0
+                }, 600);
+                return false;
+            });
+            $('pre').each(function() {
+                $(this).html('<code>' + $(this).html() + '</code>');
+            });
+            hljs.initHighlightingOnLoad();
         });
-        $('.backtotop').click(function(){
-            $("html, body").animate({ scrollTop: 0 }, 600);
-            return false;
-        });
-    });
-
-    $('pre').each(function() {
-        $(this).html('<code>'+$(this).html()+'</code>');
-    });
-    hljs.initHighlightingOnLoad();
-
-});
-</script>
+    </script>
 </head>
-<body data-spy="scroll" data-target=".bs-docs-sidebar">
-<!--navbor-->
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <!-- Be sure to leave the brand out there if you want it shown -->
-            <a class="brand" href="http://code.google.com/p/vimwiki/">Vimwiki</a>
 
-            <!-- Everything you want hidden at 940px or less, place within here -->
-            <div class="nav-collapse collapse">
-                <!-- .nav, .navbar-search, .navbar-form, etc -->
-                <ul class="nav">
-                    <li class="">
-                        <a href="index.html">Index</a>
-                    </li>
-                    <li class="">
-                        <a href="workspace/index.html">Workspace</a>
-                    </li>
-                    <li class="">
-                        <a href="diary/diary.html">Diary</a>
-                    </li>
-                    <li class="">
-                        <a href="todo.html">To Do</a>
-                    </li>
-                </ul>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+    <!--navbor-->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <!-- Be sure to leave the brand out there if you want it shown -->
+                <a class="brand" href="http://code.google.com/p/vimwiki/">Vimwiki</a>
+
+                <!-- Everything you want hidden at 940px or less, place within here -->
+                <div class="nav-collapse collapse">
+                    <!-- .nav, .navbar-search, .navbar-form, etc -->
+                    <ul class="nav">
+                        <li class="">
+                            <a href="index.html">Index</a>
+                        </li>
+                        <li class="">
+                            <a href="workspace/index.html">Workspace</a>
+                        </li>
+                        <li class="">
+                            <a href="diary/diary.html">Diary</a>
+                        </li>
+                        <li class="">
+                            <a href="todo.html">To Do</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!--Container-->
-<div class="container-fluid">
-    <div class="row-fluid">
-        <div class="span3 bs-docs-sidebar" id = "toc">
-            <ul id="sidebar_list" class="nav nav-list bs-docs-sidenav affix">
-            </ul>
+    <!--Container-->
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span3 bs-docs-sidebar" id="toc">
+                <ul id="sidebar_list" class="nav nav-list bs-docs-sidenav affix">
+                </ul>
+            </div>
+
+            <div class="span7" data-spy="scrool">
+                <!--Body content-->
+                
+
+<h2 id="toc_0_1">简介</h2>
+<p>
+Vimwiki是Vim中一个私人的wiki--每个链接文本有它们自己的高亮语法。
+</p>
+
+<p>
+你可以用Vimwiki来做以下事情：
+</p>
+<ul>
+<li>
+整理笔记和想法
+
+<li>
+管理任务清单
+
+<li>
+写文档
+
+</ul>
+
+<p>
+可以通过按&lt;Leader&gt;ww(通常是\ww)快速跳转到你的wiki主页（index页面）。主页默认位置为
+</p>
+<pre>
+	~/vimwiki/index.wiki
+</pre>
+
+<p>
+通过下面的例子来了解它：
+</p>
+<pre>
+*我的知识库*
+	* [[workspace/index|Workspace]] --工作空间
+	* [[diary/diary|Diary]] -- 日记
+	* [[ToDo]] -- 待做事项
+</pre>
+<p>
+<strong>我的知识库</strong>
+</p>
+<ul>
+<li>
+<a href="workspace/index.html">Workspace</a> --工作空间
+
+<li>
+<a href="diary/diary.html">Diary</a> -- 日记
+
+<li>
+<a href="ToDo.html">ToDo</a> -- 待做事项
+
+</ul>
+
+<h2 id="toc_0_2">使用前准备</h2>
+
+<p>
+确定在你的_vimrc文件中有以下设置(没有它们vimwiki将不会正常工作):
+</p>
+<pre>
+	set nocompatible
+	filetype plugin on
+	syntax on
+</pre>
+
+<h2 id="toc_0_3">映射</h2>
+
+<p>
+在vimwiki中有全局映射与局部映射两种
+</p>
+
+<p>
+<strong><em>&lt;Leader&gt;一般为\</em></strong>
+<strong><em>&lt;Plug&gt;一般为:</em></strong>
+</p>
+
+<h4 id="toc_0_3_0_1">全局映射</h4>
+<pre>
+[count]&lt;Leader&gt;ww or &lt;Plug&gt;VimwikiIndex
+	打开第count个索引文件
+	&lt;Leader&gt;ww 打开g:vimwiki_list中的第一个wiki
+	1&lt;Leader&gt;ww 如上，打开g:vimwiki_list中的第一个wiki
+	2&lt;Leader&gt;ww 打开g:vimwiki_list中的第二个wiki
+	etc...
+	重新定义映射：
+	:nmap &lt;Leader&gt;w &lt;Plug&gt;VimwikiIndex
+</pre>
+
+<pre>
+[count]&lt;Leader&gt;wt or &lt;Plug&gt;VimwikiTabIndex
+	在一个新的标签中打开第count个index文件
+
+	&lt;Leader&gt;wt  在新标签中打开g:vimwiki_list中第一个wiki
+	1&lt;Leader&gt;wt 如上，在新标签中打开g:vimwiki_list中第一个wiki
+	2&lt;Leader&gt;wt 在新标签页中打开g:vimwiki_list中的第二个wiki
+	etc...
+	重新定义映射：
+	:nmap &lt;Leader&gt;t &lt;Plug&gt;VimwikiTabIndex
+</pre>
+
+<pre>
+&lt;Leader&gt;ws or &lt;Plug&gt;VimwikiUISelect
+	列出并选择可用的wikie
+	重定义映射：
+	:nmap &lt;Leader&gt;wq &lt;Plug&gt;VimwikiUISelect
+</pre>
+
+<pre>
+[count]&lt;Leader&gt;wi or &lt;Plug&gt;VimwikiDiaryIndex
+	打开第count个wiki的日志索引文件
+	
+	&lt;Leader&gt;wi 打开g:vimwiki_list中第一个wiki的日志索引文件
+	1&lt;Leader&gt;wi 如上
+	2&lt;Leader&gt;wi 打开g:vimwiki_list中第二个wiki的日志索引文件
+	etc...
+	重定义映射：
+	:nmap &lt;Leader&gt;i &lt;Plug&gt;VimwikiDiaryIndex
+</pre>
+
+            </div>
         </div>
+    </div>
 
-        <div class="span7">
-            <!--Body content-->
-            
-<h1 id="toc_1">hello</h1>
-<h2 id="toc_1.1">helllo</h2>
-<h3 id="toc_1.1.1">hello</h3>
-<h4 id="toc_1.1.1.1">h3llo</h4>
-<h2 id="toc_1.2">Workspace</h2>
-<h2 id="toc_1.3">Diary</h2>
-<h2 id="toc_1.4">ToDoo</h2>
-<p>
-<a href="../diary/">Directory</a>
-</p>
+	<!--Backtotop-->
+    <a href="#" class="backtotop"><i class="fa fa-arrow-circle-up fa-4x"></i></a>
 
-<h1 id="toc_2">hello</h1>
-<hr />
-
-<p>
-<a href="E:\chao_data\vimwiki\html/this is a link.html">wiki0:this is a link</a>
-<a href="file://E:\chao_data\vimwiki/this is a link">local:this is a link</a>
-<a href="diary/this is a link.html">diary:this is a link</a>
-</p>
-
-<table class='center'>
-<tr>
-<th>
-Year
-</th>
-<th>
-Temperature (low)
-</th>
-<th>
-Temperature (high)
-</th>
-</tr>
-<tr>
-<td>
-1900
-</td>
-</tr>
-<tr>
-<td>
-1910
-</td>
-<td>
--15
-</td>
-<td>
-30
-</td>
-</tr>
-<tr>
-<td>
-1920
-</td>
-<td>
--10
-</td>
-<td>
-32
-</td>
-</tr>
-<tr>
-<td>
-1930
-</td>
-<td>
-<em>N/A</em>
-</td>
-<td>
-<em>N/A</em>
-</td>
-</tr>
-<tr>
-<td>
-1940
-</td>
-<td>
--2
-</td>
-<td>
-40
-</td>
-</tr>
-</table>
-<h1 id="toc_3">hello</h1>
-<h1 id="toc_4">hello</h1>
-<h1 id="toc_5">hello</h1>
-<h1 id="toc_6">hello</h1>
-<h1 id="toc_7">hello</h1>
-<h1 id="toc_8">hello</h1>
-<h2 id="toc_8.1">helllo</h2>
-<h3 id="toc_8.1.1">hello</h3>
-<h4 id="toc_8.1.1.1">h3llo</h4>
-<h2 id="toc_8.2">Workspace</h2>
-<h2 id="toc_8.3">Diary</h2>
-<h2 id="toc_8.4">ToDoo</h2>
-<p>
-<a href="../diary/">Directory</a>
-</p>
-
-<h1 id="toc_9">hello</h1>
-<hr />
-
-<p>
-<a href="E:\chao_data\vimwiki\html/this is a link.html">wiki0:this is a link</a>
-<a href="file://E:\chao_data\vimwiki/this is a link">local:this is a link</a>
-<a href="diary/this is a link.html">diary:this is a link</a>
-</p>
-
-<table class='center'>
-<tr>
-<th>
-Year
-</th>
-<th>
-Temperature (low)
-</th>
-<th>
-Temperature (high)
-</th>
-</tr>
-<tr>
-<td>
-1900
-</td>
-</tr>
-<tr>
-<td>
-1910
-</td>
-<td>
--15
-</td>
-<td>
-30
-</td>
-</tr>
-<tr>
-<td>
-1920
-</td>
-<td>
--10
-</td>
-<td>
-32
-</td>
-</tr>
-<tr>
-<td>
-1930
-</td>
-<td>
-<em>N/A</em>
-</td>
-<td>
-<em>N/A</em>
-</td>
-</tr>
-<tr>
-<td>
-1940
-</td>
-<td>
--2
-</td>
-<td>
-40
-</td>
-</tr>
-</table>
-<h1 id="toc_10">hello</h1>
-<h2 id="toc_10.1">helllo</h2>
-<h3 id="toc_10.1.1">hello</h3>
-<h4 id="toc_10.1.1.1">h3llo</h4>
-<h2 id="toc_10.2">Workspace</h2>
-<h2 id="toc_10.3">Diary</h2>
-<h2 id="toc_10.4">ToDoo</h2>
-<p>
-<a href="../diary/">Directory</a>
-</p>
-
-<h1 id="toc_11">hello</h1>
-<hr />
-
-<p>
-<a href="E:\chao_data\vimwiki\html/this is a link.html">wiki0:this is a link</a>
-<a href="file://E:\chao_data\vimwiki/this is a link">local:this is a link</a>
-</p>
-<h1 id="toc_12">hello</h1>
-<h2 id="toc_12.1">helllo</h2>
-<h3 id="toc_12.1.1">hello</h3>
-<h4 id="toc_12.1.1.1">h3llo</h4>
-<h2 id="toc_12.2">Workspace</h2>
-<h2 id="toc_12.3">Diary</h2>
-<h2 id="toc_12.4">ToDoo</h2>
-<p>
-<a href="../diary/">Directory</a>
-</p>
-
-<h1 id="toc_13">hello</h1>
-<hr />
-
-<p>
-<a href="E:\chao_data\vimwiki\html/this is a link.html">wiki0:this is a link</a>
-<a href="file://E:\chao_data\vimwiki/this is a link">local:this is a link</a>
-<a href="diary/this is a link.html">diary:this is a link</a>
-</p>
-
-<table class='center'>
-<tr>
-<th>
-Year
-</th>
-<th>
-Temperature (low)
-</th>
-<th>
-Temperature (high)
-</th>
-</tr>
-<tr>
-<td>
-1900
-</td>
-</tr>
-<tr>
-<td>
-1910
-</td>
-<td>
--15
-</td>
-<td>
-30
-</td>
-</tr>
-<tr>
-<td>
-1920
-</td>
-<td>
--10
-</td>
-<td>
-32
-</td>
-</tr>
-<tr>
-<td>
-1930
-</td>
-<td>
-<em>N/A</em>
-</td>
-<td>
-<em>N/A</em>
-</td>
-</tr>
-<tr>
-<td>
-1940
-</td>
-<td>
--2
-</td>
-<td>
-40
-</td>
-</tr>
-</table>
-<h1 id="toc_14">hello</h1>
-<p>
-<a href="diary/this is a link.html">diary:this is a link</a>
-</p>
-
-<table class='center'>
-<tr>
-<th>
-Year
-</th>
-<th>
-Temperature (low)
-</th>
-<th>
-Temperature (high)
-</th>
-</tr>
-<tr>
-<td>
-1900
-</td>
-</tr>
-<tr>
-<td>
-1910
-</td>
-<td>
--15
-</td>
-<td>
-30
-</td>
-</tr>
-<tr>
-<td>
-1920
-</td>
-<td>
--10
-</td>
-<td>
-32
-</td>
-</tr>
-<tr>
-<td>
-1930
-</td>
-<td>
-<em>N/A</em>
-</td>
-<td>
-<em>N/A</em>
-</td>
-</tr>
-<tr>
-<td>
-1940
-</td>
-<td>
--2
-</td>
-<td>
-40
-</td>
-</tr>
-</table>
-<h1 id="toc_15">hello</h1>
-<h2 id="toc_15.1">helllo</h2>
-<h3 id="toc_15.1.1">hello</h3>
-<h4 id="toc_15.1.1.1">h3llo</h4>
-<h2 id="toc_15.2">Workspace</h2>
-<h2 id="toc_15.3">Diary</h2>
-<h2 id="toc_15.4">ToDoo</h2>
-<p>
-<a href="../diary/">Directory</a>
-</p>
-
-<h1 id="toc_16">hello</h1>
-<hr />
-
-<p>
-<a href="E:\chao_data\vimwiki\html/this is a link.html">wiki0:this is a link</a>
-<a href="file://E:\chao_data\vimwiki/this is a link">local:this is a link</a>
-<a href="diary/this is a link.html">diary:this is a link</a>
-</p>
-
-<table class='center'>
-<tr>
-<th>
-Year
-</th>
-<th>
-Temperature (low)
-</th>
-<th>
-Temperature (high)
-</th>
-</tr>
-<tr>
-<td>
-1900
-</td>
-</tr>
-<tr>
-<td>
-1910
-</td>
-<td>
--15
-</td>
-<td>
-30
-</td>
-</tr>
-<tr>
-<td>
-1920
-</td>
-<td>
--10
-</td>
-<td>
-32
-</td>
-</tr>
-<tr>
-<td>
-1930
-</td>
-<td>
-<em>N/A</em>
-</td>
-<td>
-<em>N/A</em>
-</td>
-</tr>
-<tr>
-<td>
-1940
-</td>
-<td>
--2
-</td>
-<td>
-40
-</td>
-</tr>
-</table>
-<h1 id="toc_17">hello</h1>
-<h2 id="toc_17.1">helllo</h2>
-<h3 id="toc_17.1.1">hello</h3>
-<h4 id="toc_17.1.1.1">h3llo</h4>
-<h2 id="toc_17.2">Workspace</h2>
-<h2 id="toc_17.3">Diary</h2>
-<h2 id="toc_17.4">ToDoo</h2>
-<p>
-<a href="../diary/">Directory</a>
-</p>
-
-<h1 id="toc_18">hello</h1>
-<hr />
-
-<p>
-<a href="E:\chao_data\vimwiki\html/this is a link.html">wiki0:this is a link</a>
-<a href="file://E:\chao_data\vimwiki/this is a link">local:this is a link</a>
-<a href="diary/this is a link.html">diary:this is a link</a>
-</p>
-
-<table class='center'>
-<tr>
-<th>
-Year
-</th>
-<th>
-Temperature (low)
-</th>
-<th>
-Temperature (high)
-</th>
-</tr>
-<tr>
-<td>
-1900
-</td>
-</tr>
-<tr>
-<td>
-1910
-</td>
-<td>
--15
-</td>
-<td>
-30
-</td>
-</tr>
-<tr>
-<td>
-1920
-</td>
-<td>
--10
-</td>
-<td>
-32
-</td>
-</tr>
-<tr>
-<td>
-1930
-</td>
-<td>
-<em>N/A</em>
-</td>
-<td>
-<em>N/A</em>
-</td>
-</tr>
-<tr>
-<td>
-1940
-</td>
-<td>
--2
-</td>
-<td>
-40
-</td>
-</tr>
-</table>
-<h1 id="toc_19">hello</h1>
-<h2 id="toc_19.1">helllo</h2>
-<h3 id="toc_19.1.1">hello</h3>
-<h4 id="toc_19.1.1.1">h3llo</h4>
-<h2 id="toc_19.2">Workspace</h2>
-<h2 id="toc_19.3">Diary</h2>
-<h2 id="toc_19.4">ToDoo</h2>
-<p>
-<a href="../diary/">Directory</a>
-</p>
-
-<h1 id="toc_20">hello</h1>
-<hr />
-
-<p>
-<a href="E:\chao_data\vimwiki\html/this is a link.html">wiki0:this is a link</a>
-<a href="file://E:\chao_data\vimwiki/this is a link">local:this is a link</a>
-<a href="diary/this is a link.html">diary:this is a link</a>
-</p>
-
-<table class='center'>
-<tr>
-<th>
-Year
-</th>
-<th>
-Temperature (low)
-</th>
-<th>
-Temperature (high)
-</th>
-</tr>
-<tr>
-<td>
-1900
-</td>
-</tr>
-<tr>
-<td>
-1910
-</td>
-<td>
--15
-</td>
-<td>
-30
-</td>
-</tr>
-<tr>
-<td>
-1920
-</td>
-<td>
--10
-</td>
-<td>
-32
-</td>
-</tr>
-<tr>
-<td>
-1930
-</td>
-<td>
-<em>N/A</em>
-</td>
-<td>
-<em>N/A</em>
-</td>
-</tr>
-<tr>
-<td>
-1940
-</td>
-<td>
--2
-</td>
-<td>
-40
-</td>
-</tr>
-</table>
-<h1 id="toc_21">hello</h1>
-
-        </div>
-  </div>
-</div>
-<a href="#" class="backtotop"><i class="fa fa-arrow-circle-up fa-4x"></i></a>
-
-<!-- Footer
+    <!-- Footer
     ================================================== -->
-<footer class="footer navbar-bottom">
-  <div class="container">
-    <p><a href="https://github.com/UglyMelon007/uglymelon007.github.com">Copyright2016 @ UglyMelon007</a>
-  </div>
-</footer>
+    <footer class="footer navbar-bottom">
+        <div class="container">
+            <p><a href="https://github.com/UglyMelon007/uglymelon007.github.com">Copyright2016 @ UglyMelon007</a>
+        </div>
+    </footer>
 </body>
+
 </html>
+
