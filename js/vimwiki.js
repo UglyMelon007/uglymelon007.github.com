@@ -1,27 +1,35 @@
 $(document).ready(function() {
-    if (window.innerWidth >= 460) {
-        var toggler = $('<div class="toggler" title="点击展开/收起，Shift+Z 隐藏或打开">目录</div>'),
-        toc = $('#toc');
-        toc.wrap($('#);
+    $(".toc").appendTo($("#navSidebar"));
+    $('table').each(function() {
+        $(this).addClass('table table-striped table-condensed table-hover');
+    });
 
-        $('#toc').prepend(toggler)
-        .delay(500)
-        .fadeTo(500, '0.25')
-        .hover(function() {
-            $(this).stop().fadeTo(300, '0.9');
-        }, function() {
-            $(this).stop().fadeTo(300, '0.25');
-        });
+    $('.done0').each(function() {
+        $(this).html('<div class="alert alert-info"><i class="fa fa-check-square-o"></i>' + $(this).html() + '</div></li>');
+    });
 
-        $('html').keypress(function(e) {
-            if (e.shiftKey && (e.charCode || e.keyCode) == '90') {
-                e.preventDefault();
-                $('div.tocWrap').toggle(200);
-            }
-        });
+    $('.done4').each(function() {
+        $(this).html('<div class="alert alert-success"><i class="fa fa-square-o"></i>' + $(this).html() + '</div></li>');
+    });
 
-        toggler.click(function() {
-            $('div.toc').slideToggle(300);
-        });
-    }
+    // Fade Out Back-To-Top-Link on new page
+    $('.backtotop').fadeOut();
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('.backtotop').fadeIn();
+        } else {
+            $('.backtotop').fadeOut();
+        }
+    });
+    $('.backtotop').click(function() {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+    $('pre').each(function() {
+        $(this).html('<code>' + $(this).html() + '</code>');
+    });
+    hljs.initHighlightingOnLoad();
 });
+

@@ -6,92 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/patch.css" />
     <link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.css" />
-    <link type="text/css" rel="stylesheet" href="css/docs.css" />
+    <link type="text/css" rel="stylesheet" href="css/docs.min.css" />
     <link type="text/css" rel="stylesheet" href="css/monokai.css" />
     <link type="text/css" rel="stylesheet" href="css/vimwiki.css" />
     <link type="text/css" rel="stylesheet" href="css/font-awesome.css">
-
-    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/highlight.pack.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('table').each(function() {
-                $(this).addClass('table table-striped table-condensed table-hover');
-            });
-
-            $('.done0').each(function() {
-                $(this).html('<div class="alert alert-info"><i class="fa fa-check-square-o"></i>' + $(this).html() + '</div></li>');
-            });
-
-            $('.done4').each(function() {
-                $(this).html('<div class="alert alert-success"><i class="fa fa-square-o"></i>' + $(this).html() + '</div></li>');
-            });
-
-            // Fade Out Back-To-Top-Link on new page
-            $('.backtotop').fadeOut();
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 100) {
-                    $('.backtotop').fadeIn();
-                } else {
-                    $('.backtotop').fadeOut();
-                }
-            });
-            $('.backtotop').click(function() {
-                $("html, body").animate({
-                    scrollTop: 0
-                }, 600);
-                return false;
-            });
-            $('pre').each(function() {
-                $(this).html('<code>' + $(this).html() + '</code>');
-            });
-            hljs.initHighlightingOnLoad();
-        });
-    </script>
 </head>
 
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
     <!--navbor-->
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <!-- Be sure to leave the brand out there if you want it shown -->
-                <a class="brand" href="http://code.google.com/p/vimwiki/">Vimwiki</a>
-
-                <!-- Everything you want hidden at 940px or less, place within here -->
-                <div class="nav-collapse collapse">
-                    <!-- .nav, .navbar-search, .navbar-form, etc -->
-                    <ul class="nav">
-                        <li class="">
-                            <a href="index.html">Index</a>
-                        </li>
-                        <li class="">
-                            <a href="workspace/index.html">Workspace</a>
-                        </li>
-                        <li class="">
-                            <a href="diary/diary.html">Diary</a>
-                        </li>
-                        <li class="">
-                            <a href="todo.html">To Do</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+        <div class="container">
+            <nav id="bs-navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="">
+                        <a href="index.html">Index</a>
+                    </li>
+                    <li class="">
+                        <a href="workspace/index.html">Workspace</a>
+                    </li>
+                    <li class="">
+                        <a href="diary/diary.html">Diary</a>
+                    </li>
+                    <li class="">
+                        <a href="todo.html">To Do</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="brand" href="http://code.google.com/p/vimwiki/">Vimwiki</a>
+                    </li>
+                </ul>
+            </nav>
+    </header>
 
     <!--Container-->
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <div class="span3 bs-docs-sidebar" id="toc">
-                <ul id="sidebar_list" class="nav nav-list bs-docs-sidenav affix">
-                </ul>
-            </div>
-
-            <div class="span7" data-spy="scrool">
+    <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-md-9" role="main">
                 <!--Body content-->
                 
 <div class="toc">
@@ -101,6 +55,13 @@
 <li><a href="#toc_0_3">映射</a>
 <ul class="nav">
 <li><a href="#toc_0_3_0_1">全局映射</a>
+<li><a href="#toc_0_3_0_2">局部映射</a>
+<li><a href="#toc_0_3_0_3">文本对象</a>
+</ul>
+</ul>
+<li><a href="#toc_0_4">命令</a>
+<ul class="nav">
+<li><a href="#toc_0_4_0_1">全局命令</a>
 </ul>
 </ul>
 </ul>
@@ -222,20 +183,412 @@ Vimwiki是Vim中一个私人的wiki--每个链接文本有它们自己的高亮�
 	:nmap &lt;Leader&gt;i &lt;Plug&gt;VimwikiDiaryIndex
 </pre>
 
+<pre>
+[count]&lt;Leader&gt;w&lt;Leader&gt;w or &lt;Plug&gt;VimwikiMakeDiaryNode
+	打开第count个wiki的当前的日志
+	
+	&lt;Leader&gt;w&lt;Leader&gt;w 打开g:vimwiki_list中第一个wiki当天的日志文件
+	1&lt;Leader&gt;w&lt;Leader&gt;w 如上。
+	2&lt;Leader&gt;w&lt;Leader&gt;w 打开g:vimwiki_list中第二个wiki当天的日志文件
+	etc...
+	重定义映射：
+	:nmap &lt;Leader&gt;d &lt;Plug&gt;VimwikiMakeDiaryNote
+</pre>
+
+<pre>
+[count]&lt;Leader&gt;w&lt;Leader&gt;t or &lt;Plug&gt;VimwikiTabMakeDiaryNote
+	在一个新的标签中打开第count个wiki中当天的日志文件
+
+	&lt;Leader&gt;w&lt;Leader&gt;t 在新标签中打开g:vimwiki_list中第一个wiki的当天日志文件
+	1&lt;Leader&gt;w&lt;Leader&gt;5 如上
+	2&lt;Leader&gt;w&lt;Leader&gt;t 在新标签中打开g:vimwiki_list中第二个wiki的当天日志文件
+	etc...
+	重定义映射：
+	:nmap &lt;Leader&gt;dt &lt;Plug&gt;VimwikiTabMakeDiaryNote
+</pre>
+
+<h4 id="toc_0_3_0_2">局部映射</h4>
+<table>
+<tr>
+<th>
+Normal Mode（正常模式）
+</th>
+<th>
+vimwiki-local-mappings
+</th>
+</tr>
+<tr>
+<th>
+&lt;Leader&gt;wh
+</th>
+<th>
+将当前wiki页面转换为html页面。 <br/>Maps to :Vimwiki2HTML  <br/>重定义映射： <br/>:nmap &lt;Leader&gt;wc &lt;Plug&gt;Vimwiki2HTML
+</th>
+</tr>
+<tr>
+<th>
+&lt;Leader&gt;whh
+</th>
+<th>
+将当前wiki页面转换为html页面并在浏览器中打开它。<br/>Maps to :Vimwiki2HTML<br/>重定义映射：<br/>:nmap &lt;Leader&gt;wcc &lt;Plug&gt;Vimwiki2HTMLBrowse
+</th>
+</tr>
+<tr>
+<th>
+&lt;Leader&gt;w&lt;Leader&gt;i
+</th>
+<th>
+更新日志主页，仅仅在当前页面为日志主页时方可工作<br/>Maps to :VimwikiDiaryGenerateLinks<br/>重新定义映射：<br/>:nmap &lt;Leader&gt;wcr &lt;Plug&gt;VimwikiDiaryGenerateLinks
+</th>
+</tr>
+<tr>
+<th>
+&lt;CR&gt;即为Ctrl键
+</th>
+<th>
+打开/创建（如果需要的话）wiki链接<br/>Maps to:<br/>:VimwikiFollowLink<br/>重定义：<br/>:nmap &lt;Leader&gt;wf &lt;Plug&gt;VimwikiFollowLink
+</th>
+</tr>
+<tr>
+<th>
+&lt;S-CR&gt;
+</th>
+<th>
+在当前页面横向拆分一个窗口来显示当前链接页面（若需要则创建wiki页面）<br/>在某些终端上可能不工作<br/>Maps to<br/>:VimwikiSplitLink<br/>重定义映射<br/>:nmap &lt;Leader&gt;we &lt;Plug&gt;VimwikiSplitLink
+</th>
+</tr>
+<tr>
+<th>
+&lt;C-CR&gt;
+</th>
+<th>
+在当前页面纵向拆分一个窗口来显示当前链接页面（若需要则创建wiki页面）<br/>在某些终端上可能不工作<br/>Maps to<br/>:VimwikiVSplitLink<br/>重定义映射<br/>:nmap &lt;Leader&gt;we &lt;Plug&gt;VimwikiVSplitLink
+</th>
+</tr>
+<tr>
+<th>
+&lt;C-S-CR&gt;,&lt;D-CR&gt;
+</th>
+<th>
+在一个新标签中打开一个wiki链接（创建wiki页面如需要）<br/>在某些终端上可能不能工作。<br/>Maps to<br/>:VimwikiTabnewLink<br/>重定义映射<br/>:nmap &lt;Leader&gt;wt &lt;Plug&gt;VimwikiTabnewLink
+</th>
+</tr>
+<tr>
+<th>
+&lt;Backspace&gt;
+</th>
+<th>
+返回上一个wiki页面<br/>Maps to<br/>:VimwikiGoBackLink<br/>重定义映射:<br/>:nmap &lt;Leader&gt;wb &lt;Plug&gt;VimwikiGoBackLink
+</th>
+</tr>
+<tr>
+<th>
+&lt;Tab&gt;
+</th>
+<th>
+查找当前页面的下一个链接<br/>Maps to<br/>:VimwikiNextLink<br/>重定义映射：<br/>:nmap &lt;Leader&gt;wn &lt;Plug&gt;VimwikiNextLink
+</th>
+</tr>
+<tr>
+<th>
+&lt;S-Tab&gt;
+</th>
+<th>
+查找当前页面的上一个链接<br/>Maps to<br/>:VimwikiPrevLink<br/>重定义映射：<br/>:nmap &lt;Leader&gt;wn &lt;Plug&gt;VimwikiPrevLink
+</th>
+</tr>
+<tr>
+<th>
+&lt;Leader&gt;wd
+</th>
+<th>
+删除当前wiki页面<br/>Maps to<br/>:VimwikiDeleteLink<br/>重定义映射：<br/>:nmap &lt;Leader&gt;dd &lt;Plug&gt;VimwikiDeleteLink
+</th>
+</tr>
+<tr>
+<th>
+&lt;Leader&gt;wr
+</th>
+<th>
+重命名当前wiki页面<br/>Maps to<br/>:VimwikiRenameLink<br/>重新定义映射：<br/>:nmap &lt;Leader&gt;rr &lt;Plug》VimwikiRenameLink
+</th>
+</tr>
+<tr>
+<th>
+&lt;C-Space&gt;
+</th>
+<th>
+选择或不选择列表项目<br/>Maps to<br/>:VimwikiToggleListItem<br/>重新定义映射：<br/>:nmap &lt;Leader&gt;tt &lt;Plug&gt;VimwikiToggleListItem
+</th>
+</tr>
+<tr>
+<th>
+=
+</th>
+<th>
+提升标题等级若不是标题则变为标题<br/>重新定义映射：<br/>:nmap == &lt;Plug&gt;VimwikiAddHeaderLevel
+</th>
+</tr>
+<tr>
+<th>
+-
+</th>
+<th>
+降低标题等级<br/>重新定义映射：<br/>nmap -- &lt;Plug&gt;VimwikiRemoveHeaderLevel
+</th>
+</tr>
+<tr>
+<th>
++
+</th>
+<th>
+创建一个链接或为一个链接添加名字。<br>根据语境不同，这个命令将会：<br/>    为文件加上wiki链接;<br/>将URLS转换为wiki链接;<br/>为wiki加上占位符文本或者为weblinks添加缺少的描述。<br/>正常模式下作用于光标所在的单词或链接。<br/>视图模式下作用于选择的文本
+</th>
+</tr>
+<tr>
+<th>
+glm
+</th>
+<th>
+增加缩进，并使其成为一个列表
+</th>
+</tr>
+<tr>
+<th>
+gll
+</th>
+<th>
+减少缩进，最少减为一个，当为一个时继续则可使其变成非列表项
+</th>
+</tr>
+<tr>
+<th>
+gl* or gl8
+</th>
+<th>
+在开头添加一个*符号。仅在语法支持时可用
+</th>
+</tr>
+<tr>
+<th>
+gl# or gl3
+</th>
+<th>
+在开头添加一个#符号。仅在语法支持时可用
+</th>
+</tr>
+<tr>
+<th>
+gl-
+</th>
+<th>
+在开头添加一个-符号。仅在语法支持时可用
+</th>
+</tr>
+<tr>
+<th>
+gl1
+</th>
+<th>
+在开头不加一个1.符号。仅在语法支持时可用
+</th>
+</tr>
+<tr>
+<th>
+gqq or gww
+</th>
+<th>
+格式化表格，在更改表格后可通过在插入与正常模式之间切换来格式化表格
+</th>
+</tr>
+<tr>
+<th>
+&lt;A-Left&gt;
+</th>
+<th>
+移动到当前表格的左边一列<br/>重新定义映射：<br/>:nmap &lt;Leader&gt;wtl &lt;Plug&gt;VimwikiTableMoveColumnLeft
+</th>
+</tr>
+<tr>
+<th>
+&lt;A-Right&gt;
+</th>
+<th>
+移动到当前表格的右边一列<br/>重新定义映射：<br/>:nmap &lt;Leader&gt;wtr &lt;Plug&gt;VimwikiTableMoveColumnRight
+</th>
+</tr>
+<tr>
+<th>
+&lt;C-Up&gt;
+</th>
+<th>
+查看前一天日志，若有的话 :VimwikiDiaryPrevDay
+</th>
+</tr>
+<tr>
+<th>
+&lt;C-Down&gt;
+</th>
+<th>
+查看后一天日志,若有的话 :VimwikiDiaryNextDay
+</th>
+</tr>
+<tr>
+<th>
+&nbsp;
+</th>
+<th>
+仅当g:vimwiki_use_mouse 设置为1时可工作
+</th>
+</tr>
+<tr>
+<td>
+&lt;2-LeftMouse&gt;
+</td>
+<td>
+同&lt;CR&gt;
+</td>
+</tr>
+<tr>
+<td>
+&lt;S-2-LeftMouse&gt;
+</td>
+<td>
+同&lt;C-CR&gt;
+</td>
+</tr>
+<tr>
+<td>
+&lt;C-2-LeftMouse&gt;
+</td>
+<td>
+同&lt;C-S-CR&gt;
+</td>
+</tr>
+<tr>
+<td>
+&lt;RightMouse&gt;&lt;LeftMouse&gt;
+</td>
+<td>
+返回上一个wiki页面
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>
+INSERT MODE(插入模式）
+</th>
+<th>
+vimwiki-table-mappings
+</th>
+</tr>
+<tr>
+<td>
+&lt;CR&gt;
+</td>
+<td>
+跳到当前单元格下的单元格，若没有则创建一行
+</td>
+</tr>
+<tr>
+<td>
+&lt;Tab&gt;
+</td>
+<td>
+跳到当前单元格后的单元格，若没有则创建一行
+</td>
+</tr>
+</table>
+
+<h4 id="toc_0_3_0_3">文本对象</h4>
+
+<p>
+<strong>没搞明白是啥。。。</strong>
+<table>
+<tr>
+<td>
+ah
+</td>
+<td>
+包括后面空行的一段（两个连续的标题之间的部分）
+</td>
+</tr>
+<tr>
+<td>
+ih
+</td>
+<td>
+不包括后面空行的一段
+</td>
+</tr>
+<tr>
+<td>
+a\
+</td>
+<td>
+表格内一个单元格
+</td>
+</tr>
+<tr>
+<td>
+i\
+</td>
+<td>
+表格内一个内置单元格
+</td>
+</tr>
+<tr>
+<td>
+ac
+</td>
+<td>
+表格内一列
+</td>
+</tr>
+<tr>
+<td>
+ic
+</td>
+<td>
+表格一内置列
+</td>
+</tr>
+</table>
+</p>
+
+<h2 id="toc_0_4">命令</h2>
+
+<h4 id="toc_0_4_0_1">全局命令</h4>
+
+            </div>
+            <div class="col-md-3" role="complementary">
+                <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" id="navSidebar">
+                    <ul class="nav bs-docs-sidenav">
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
 
-	<!--Backtotop-->
+    <!--Backtotop-->
     <a href="#" class="backtotop"><i class="fa fa-arrow-circle-up fa-4x"></i></a>
 
     <!-- Footer
     ================================================== -->
-    <footer class="footer navbar-bottom">
+    <footer class="bs-docs-footer" role="contentinfo">
         <div class="container">
             <p><a href="https://github.com/UglyMelon007/uglymelon007.github.com">Copyright2016 @ UglyMelon007</a>
+                <ul class="bs-docs-footer-links text-muted"></ul>
         </div>
     </footer>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/docs.min.js"></script>
+    <script type="text/javascript" src="js/highlight.pack.js"></script>
+    <script type="text/javascript" src="js/vimwiki.js"></script>
 </body>
 
 </html>
