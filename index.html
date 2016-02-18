@@ -65,15 +65,28 @@
 <li><a href="#toc_0_4_0_2">局部命令</a>
 </ul>
 </ul>
+<li><a href="#toc_0_5">Wiki语法</a>
+<ul class="nav">
+<li><a href="#toc_0_5_0_1">字体类型</a>
+<li><a href="#toc_0_5_0_2">链接</a>
+<ul class="nav">
+<li><a href="#toc_0_5_0_2_1">Wiki链接</a>
+<li><a href="#toc_0_5_0_2_2">纯URLs</a>
+<li><a href="#toc_0_5_0_2_3">Markdown链接</a>
+</ul>
+</ul>
+</ul>
 </ul>
 </ul>
 </div>
+<p>
+<br/>
+</p>
 <h2 id="toc_0_1">简介</h2>
 <p>
+<br/>
 Vimwiki是Vim中一个私人的wiki--每个链接文本有它们自己的高亮语法。
-</p>
-
-<p>
+<br/>
 你可以用Vimwiki来做以下事情：
 </p>
 <ul>
@@ -87,15 +100,15 @@ Vimwiki是Vim中一个私人的wiki--每个链接文本有它们自己的高亮�
 写文档
 
 </ul>
-
 <p>
+<br/>
 可以通过按&lt;Leader&gt;ww(通常是\ww)快速跳转到你的wiki主页（index页面）。主页默认位置为
 </p>
 <pre>
 	~/vimwiki/index.wiki
 </pre>
-
 <p>
+<br/>
 通过下面的例子来了解它：
 </p>
 <pre>
@@ -106,9 +119,11 @@ Vimwiki是Vim中一个私人的wiki--每个链接文本有它们自己的高亮�
 </pre>
 <p>
 <strong>我的知识库</strong>
-	*<a href="workspace/workspace.html">workspace</a>
 </p>
 <ul>
+<li>
+<a href="workspace/workspace.html">workspace</a> --工作空间
+
 <li>
 <a href="diary/diary.html">Diary</a> -- 日记
 
@@ -116,10 +131,13 @@ Vimwiki是Vim中一个私人的wiki--每个链接文本有它们自己的高亮�
 <a href="ToDo.html">ToDo</a> -- 待做事项
 
 </ul>
-
-<h2 id="toc_0_2">使用前准备</h2>
-
 <p>
+<hr/>
+<br/>
+</p>
+<h2 id="toc_0_2">使用前准备</h2>
+<p>
+<br/>
 确定在你的_vimrc文件中有以下设置(没有它们vimwiki将不会正常工作):
 </p>
 <pre>
@@ -127,18 +145,19 @@ Vimwiki是Vim中一个私人的wiki--每个链接文本有它们自己的高亮�
 	filetype plugin on
 	syntax on
 </pre>
-
-<h2 id="toc_0_3">映射</h2>
-
 <p>
-在vimwiki中有全局映射与局部映射两种
+<hr/>
+<br/>
 </p>
-
+<h2 id="toc_0_3">映射</h2>
 <p>
+<br/>
+在vimwiki中有全局映射与局部映射两种
+<br/>
 <strong><em>&lt;Leader&gt;一般为\</em></strong>
 <strong><em>&lt;Plug&gt;一般为:</em></strong>
+<br/>
 </p>
-
 <h4 id="toc_0_3_0_1">全局映射</h4>
 <pre>
 [count]&lt;Leader&gt;ww or &lt;Plug&gt;VimwikiIndex
@@ -150,11 +169,13 @@ Vimwiki是Vim中一个私人的wiki--每个链接文本有它们自己的高亮�
 	重新定义映射：
 	:nmap &lt;Leader&gt;w &lt;Plug&gt;VimwikiIndex
 </pre>
-
+<p>
+<br/>
+</p>
 <pre>
 [count]&lt;Leader&gt;wt or &lt;Plug&gt;VimwikiTabIndex
 	在一个新的标签中打开第count个index文件
-
+&lt;br/&gt;
 	&lt;Leader&gt;wt  在新标签中打开g:vimwiki_list中第一个wiki
 	1&lt;Leader&gt;wt 如上，在新标签中打开g:vimwiki_list中第一个wiki
 	2&lt;Leader&gt;wt 在新标签页中打开g:vimwiki_list中的第二个wiki
@@ -162,18 +183,22 @@ Vimwiki是Vim中一个私人的wiki--每个链接文本有它们自己的高亮�
 	重新定义映射：
 	:nmap &lt;Leader&gt;t &lt;Plug&gt;VimwikiTabIndex
 </pre>
-
+<p>
+<br/>
+</p>
 <pre>
 &lt;Leader&gt;ws or &lt;Plug&gt;VimwikiUISelect
 	列出并选择可用的wikie
 	重定义映射：
 	:nmap &lt;Leader&gt;wq &lt;Plug&gt;VimwikiUISelect
 </pre>
-
+<p>
+<br/>
+</p>
 <pre>
 [count]&lt;Leader&gt;wi or &lt;Plug&gt;VimwikiDiaryIndex
 	打开第count个wiki的日志索引文件
-	
+&lt;br/&gt;
 	&lt;Leader&gt;wi 打开g:vimwiki_list中第一个wiki的日志索引文件
 	1&lt;Leader&gt;wi 如上
 	2&lt;Leader&gt;wi 打开g:vimwiki_list中第二个wiki的日志索引文件
@@ -181,11 +206,13 @@ Vimwiki是Vim中一个私人的wiki--每个链接文本有它们自己的高亮�
 	重定义映射：
 	:nmap &lt;Leader&gt;i &lt;Plug&gt;VimwikiDiaryIndex
 </pre>
-
+<p>
+<br/>
+</p>
 <pre>
 [count]&lt;Leader&gt;w&lt;Leader&gt;w or &lt;Plug&gt;VimwikiMakeDiaryNode
 	打开第count个wiki的当前的日志
-	
+&lt;br/&gt;
 	&lt;Leader&gt;w&lt;Leader&gt;w 打开g:vimwiki_list中第一个wiki当天的日志文件
 	1&lt;Leader&gt;w&lt;Leader&gt;w 如上。
 	2&lt;Leader&gt;w&lt;Leader&gt;w 打开g:vimwiki_list中第二个wiki当天的日志文件
@@ -193,11 +220,13 @@ Vimwiki是Vim中一个私人的wiki--每个链接文本有它们自己的高亮�
 	重定义映射：
 	:nmap &lt;Leader&gt;d &lt;Plug&gt;VimwikiMakeDiaryNote
 </pre>
-
+<p>
+<br/>
+</p>
 <pre>
 [count]&lt;Leader&gt;w&lt;Leader&gt;t or &lt;Plug&gt;VimwikiTabMakeDiaryNote
 	在一个新的标签中打开第count个wiki中当天的日志文件
-
+&lt;br/&gt;
 	&lt;Leader&gt;w&lt;Leader&gt;t 在新标签中打开g:vimwiki_list中第一个wiki的当天日志文件
 	1&lt;Leader&gt;w&lt;Leader&gt;5 如上
 	2&lt;Leader&gt;w&lt;Leader&gt;t 在新标签中打开g:vimwiki_list中第二个wiki的当天日志文件
@@ -205,7 +234,9 @@ Vimwiki是Vim中一个私人的wiki--每个链接文本有它们自己的高亮�
 	重定义映射：
 	:nmap &lt;Leader&gt;dt &lt;Plug&gt;VimwikiTabMakeDiaryNote
 </pre>
-
+<p>
+<br/>
+</p>
 <h4 id="toc_0_3_0_2">局部映射</h4>
 <table>
 <tr>
@@ -473,7 +504,8 @@ gqq or gww
 </td>
 </tr>
 </table>
-
+<p>
+<br/>
 <table>
 <tr>
 <th>
@@ -500,10 +532,11 @@ vimwiki-table-mappings
 </td>
 </tr>
 </table>
-
+<br/>
+</p>
 <h4 id="toc_0_3_0_3">文本对象</h4>
-
 <p>
+<br/>
 <strong>没搞明白是啥。。。</strong>
 <table>
 <tr>
@@ -555,12 +588,16 @@ ic
 </td>
 </tr>
 </table>
+<hr/>
+<br/>
 </p>
-
 <h2 id="toc_0_4">命令</h2>
-
+<p>
+<br/>
+</p>
 <h4 id="toc_0_4_0_1">全局命令</h4>
-
+<p>
+<br/>
 <table>
 <tr>
 <td>
@@ -611,8 +648,11 @@ ic
 </td>
 </tr>
 </table>
-
+<br/>
+</p>
 <h4 id="toc_0_4_0_2">局部命令</h4>
+<p>
+<br/>
 <table>
 <tr>
 <td>
@@ -747,10 +787,144 @@ ic
 :VimwikiBacklinks<br/>:VWB
 </td>
 <td>
-&nbsp;
+在当前的wiki的所胡文件内查找wiki链接并显示在当前的wiki页面内。<br/>使用:lopen命令显示所有匹配<br/>使用:lnext命令显示下一个匹配<br/>使用:lprevious命令显示上一个匹配
+</td>
+</tr>
+<tr>
+<td>
+:VimwikiTable
+</td>
+<td>
+创建一个五列两行的表格<br/>:VimwikiTable cols rows 使用指定的行数列数创建一个表格<br/>:VimwikiTable cols 使用指定的列数创建一个两行N列的表格
+</td>
+</tr>
+<tr>
+<td>
+:VimwikiTableMoveColunLeft,:VimwikiTableMoveColumnRight
+</td>
+<td>
+将当前列移动右边或左边<br/>命令被分别映射为A-Left和A-Right
+</td>
+</tr>
+<tr>
+<td>
+:VimwikiGenerateLinks
+</td>
+<td>
+将可用的链接插入当前缓冲内(会在页面底部生成相应内容)
+</td>
+</tr>
+<tr>
+<td>
+:VimwikiDiaryGenerateLinks
+</td>
+<td>
+删除旧的目录，插入新的日志目录在日志index文件内（此命令只在日志index页面可用）\w\i
+</td>
+</tr>
+<tr>
+<td>
+:VimwikiDiaryNextDay
+</td>
+<td>
+转到下一天的日志若有的话<br/>映射为C-Down
+</td>
+</tr>
+<tr>
+<td>
+:VimwikiDiaryPrevDay
+</td>
+<td>
+转到上一天的日志若有的话<br/>映射为C-Up
 </td>
 </tr>
 </table>
+<hr/>
+<br/>
+</p>
+<h2 id="toc_0_5">Wiki语法</h2>
+<p>
+<br/>
+在这有很多不同的wikies。它们中许多都有自己的语法并且vimwiki的默认语法也不例外。<br/>
+</p>
+
+<p>
+Vimwiki已经进化出十分类似google's wiki的标记。下面是这个语法的详细描述<br/>
+</p>
+
+<p>
+Vimwiki也支持替换语法，像Markdown和MediaWiki等等。像头部，引用段落，和列表这样的静态元素被自定义在syntax/vimwiki_xxx.vim中，xxx为选选择的语法.<br/>
+</p>
+
+<p>
+像链接和vimwiki命令这样的交互元素被定义在syntax/vimwiki_xxx_custom.vim和autoload/vimwiki/xxx_base.vim中。目前，只有Markdown包括的内容被支持<br/>
+</p>
+
+<p>
+Vimwiki2HTML这个功能目前只被默认语法支持。<br/>
+<br/>
+</p>
+<h4 id="toc_0_5_0_1">字体类型</h4>
+<p>
+<br/>
+下面有一些字型来修饰你的文本：
+</p>
+<pre>
+*粗体*
+_斜体_
+~~删除线~~
+`代码`
+^上标^
+,,下标,,
+</pre>
+<p>
+<br/>
+</p>
+<h4 id="toc_0_5_0_2">链接</h4>
+<p>
+<br/>
+</p>
+<h5 id="toc_0_5_0_2_1">Wiki链接</h5>
+<p>
+链接用方括号包裹起来<br/>
+</p>
+<pre>
+[[This is a link]]
+</pre>
+<p>
+或者<br/>
+</p>
+<pre>
+[[This is a link|关于这个链接的描述]]
+</pre>
+<p>
+也可指向不同目录下的文件（通过再后面添加一个"/"）<br/>
+</p>
+<pre>
+[[/home/somebody/|主页目录]]
+</pre>
+<p>
+<br/>
+</p>
+<h5 id="toc_0_5_0_2_2">纯URLs</h5>
+<p>
+单纯放一个URL链接也可被支持
+</p>
+<pre>
+http://code.google.com/p/vimwiki
+mailto:habamax@gmail.com
+ftp://vim.org
+</pre>
+<p>
+<br/>
+</p>
+<h5 id="toc_0_5_0_2_3">Markdown链接</h5>
+<p>
+这种链接只能Markdown语法有效。<br/>
+</p>
+<pre>
+http://daringfireball.net/projects/markdown/syntax#link.
+</pre>
 
             </div>
             <div class="col-md-3" role="complementary">
