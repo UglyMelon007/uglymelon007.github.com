@@ -1071,7 +1071,19 @@ Term 2::
 <p>
 <br/>
 数据公式高亮显示并且可以在HTML中使用这个强大的开源显示引擎MathJax来渲染它。(<a href="https://www.mathjax.org//">MathJax</a>).<br/>
+现在支持三种格式公式，分别是行内，块显示和块环境。<br/>
+行内公式是指文本内的短公式。被单个dollar符号所围绕，如：<br/>
+<code>\( \sum_i a_i^2 = 1 \)</code><br/>
+块显示是创建一个前后有间隙的居中的公式。它必须以<code>{{&amp;</code>为开头，以<code>}}$</code>为结束，并且它们都为单独的一行并且不包含其它内容。<br/>
+例如:
 </p>
+<pre>
+ {{$
+\sum_i a_i^2
+=
+1
+ }}$
+</pre>
 
             </div>
             <div class="col-md-3" role="complementary">
