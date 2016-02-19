@@ -67,11 +67,12 @@
 <ul class="nav">
 <li><a href="#toc_5_0_1">字体类型</a>
 <li><a href="#toc_5_0_2">链接</a>
-<ul class="nav">
-<li><a href="#toc_5_0_2_0_1">Wiki链接</a>
-<li><a href="#toc_5_0_2_0_2">纯URLs</a>
-<li><a href="#toc_5_0_2_0_3">Markdown链接</a>
-</ul>
+<li><a href="#toc_5_0_3">标题</a>
+<li><a href="#toc_5_0_4">段落</a>
+<li><a href="#toc_5_0_5">列表<sub><small>(项目符号后面必须有个空格)</small></sub></a>
+<li><a href="#toc_5_0_6">表格</a>
+<li><a href="#toc_5_0_7">预定义格式化文本</a>
+<li><a href="#toc_5_0_8">数学公式</a>
 </ul>
 </ul>
 </div>
@@ -879,9 +880,7 @@ _斜体_
 <h3 id="toc_5_0_2">链接</h3>
 <p>
 <br/>
-</p>
-<h5 id="toc_5_0_2_0_1">Wiki链接</h5>
-<p>
+<strong>Wiki链接</strong>
 链接用方括号包裹起来<br/>
 </p>
 <pre>
@@ -901,9 +900,7 @@ _斜体_
 </pre>
 <p>
 <br/>
-</p>
-<h5 id="toc_5_0_2_0_2">纯URLs</h5>
-<p>
+<strong>纯URLs</strong>
 单纯放一个URL链接也可被支持
 </p>
 <pre>
@@ -913,14 +910,168 @@ ftp://vim.org
 </pre>
 <p>
 <br/>
-</p>
-<h5 id="toc_5_0_2_0_3">Markdown链接</h5>
-<p>
+<strong>Markdown链接</strong>
 这种链接只能Markdown语法有效。<br/>
+<em>这个就不说了 以后写Markdown时会说明的(有道笔记Markdown学习笔记中已写）</em><br/>
+<br/>
+</p>
+<h3 id="toc_5_0_3">标题</h3>
+<p>
+<br/>
 </p>
 <pre>
-http://daringfireball.net/projects/markdown/syntax#link.
+可以通过以下命令来设置不同标题的高亮颜色：
+:hi VimwikiHeader1 guifg=#FF0000
+:hi VimwikiHeader2 guifg=#00FF00
+:hi VimwikiHeader3 guifg=#0000FF
+:hi VimwikiHeader4 guifg=#FF00FF
+:hi VimwikiHeader5 guifg=#00FFFF
+:hi VimwikiHeader6 guifg=#FFFF00
+= 一级标题 =
+== 二级标题 ==
+。。。。。
+====== 六级标题 ======
+通过在 = 前面添加空格来使你的标题居中
 </pre>
+<p>
+<br/>
+</p>
+<h3 id="toc_5_0_4">段落</h3>
+<p>
+<br/>
+一组不缩进的数据行为一个段落。<br/>
+段落与段落用一个空行分开<br/>
+<br/>
+</p>
+<h3 id="toc_5_0_5">列表<sub><small>(项目符号后面必须有个空格)</small></sub></h3>
+<p>
+<br/>
+<strong>无序列表：</strong>
+</p>
+<pre>
+  * Bulleted list item 1
+  * Bulleted list item 2
+    * Bulleted list sub item 1
+    * Bulleted list sub item 2
+    * more ...
+      * and more ...
+      * ...
+    * Bulleted list sub item 3
+    * etc.
+或者：
+  - Bulleted list item 1
+  - Bulleted list item 2
+    - Bulleted list sub item 1
+    - Bulleted list sub item 2
+    - more ...
+      - and more ...
+      - ...
+    - Bulleted list sub item 3
+    - etc.
+或者混合使用：
+  - Bulleted list item 1
+  - Bulleted list item 2
+    * Bulleted list sub item 1
+    * Bulleted list sub item 2
+    * more ...
+      - and more ...
+      - ...
+    * Bulleted list sub item 3
+    * etc.
+</pre>
+<p>
+<strong>有序列表：</strong>
+</p>
+<pre>
+  # Numbered list item 1
+  # Numbered list item 2
+    # Numbered list sub item 1
+    # Numbered list sub item 2
+    # more ...
+      # and more ...
+      # ...
+    # Numbered list sub item 3
+    # etc.
+也可以混合使用有序与无序列表：
+  * Bulleted list item 1
+  * Bulleted list item 2
+    # Numbered list sub item 1
+    # Numbered list sub item 2
+</pre>
+<p>
+自定义列表：
+</p>
+<pre>
+Term 1:: Definition 1
+Term 2::
+:: Definition 2
+:: Definition 3
+</pre>
+<p>
+<br/>
+</p>
+<h3 id="toc_5_0_6">表格</h3>
+<p>
+<br/>
+通过往每个用分隔符|分隔的单元格内插入内容来创建表格。你可以在单元格内插入内置的wiki语法符号。包括格式化字体及链接。<br/>
+例如：
+</p>
+<pre>
+ | Year | Temperature (low) | Temperature (high) |
+ |------|-------------------|--------------------|
+ | 1900 | -10               | 25                 |
+ | 1910 | -15               | 30                 |
+ | 1920 | -10               | 32                 |
+ | 1930 | _N/A_             | _N/A_              |
+ | 1940 | -2                | 40                 |
+ 在HTML中下面的部分是高亮的并且是一个表头
+ | Year | Temperature (low) | Temperature (high) |
+ |------|-------------------|--------------------|
+</pre>
+<p>
+如果你在表格前面添加缩进，它将居中显示。<br/>
+如果你在一个单元格内设置&gt;,这个单元格将与左边的单元格合并。<br/>
+如果你在一个单元格内设置\/,这个单元格将与上边单元格合并。<br/>
+例如：
+</p>
+<pre>
+ | a  | b  | c | d |
+ | \/ | e  | &gt; | f |
+ | \/ | \/ | &gt; | g |
+ | h  | &gt;  | &gt; | &gt; |
+</pre>
+<p>
+<br/>
+</p>
+<h3 id="toc_5_0_7">预定义格式化文本</h3>
+<p>
+<br/>
+</p>
+<pre>
+使用{{{和}}}来定义一个不被格式化的文本块
+也可以添加可选的信息在 {{{ 标签后：
+{{{class="brush: python" &gt;
+ def hello(world):
+     for x in range(10):
+         print("Hello {0} number {1}".format(world, x))
+}} }
+转换成的HTMl为：
+ &lt;pre class="brush: python"&gt;
+ def hello(world):
+     for x in range(10):
+         print("Hello {0} number {1}".format(world, x))
+ &lt;/pre&gt;
+</pre>
+<p>
+通过外部js工具可以使用指定的代码颜色，比如googls的高亮语法<br/>
+你可以为预格式化文本设置高亮代码段<br/>
+<br/>
+</p>
+<h3 id="toc_5_0_8">数学公式</h3>
+<p>
+<br/>
+数据公式高亮显示并且可以在HTML中使用这个强大的开源显示引擎MathJax来渲染它。(<a href="https://www.mathjax.org//">MathJax</a>).<br/>
+</p>
 
             </div>
             <div class="col-md-3" role="complementary">
