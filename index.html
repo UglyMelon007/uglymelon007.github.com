@@ -73,6 +73,9 @@
 <li><a href="#toc_5_0_6">表格</a>
 <li><a href="#toc_5_0_7">预定义格式化文本</a>
 <li><a href="#toc_5_0_8">数学公式</a>
+<li><a href="#toc_5_0_9">块引用</a>
+<li><a href="#toc_5_0_10">注释</a>
+<li><a href="#toc_5_0_11">方案</a>
 </ul>
 </ul>
 </div>
@@ -1078,6 +1081,8 @@ Term 2::
 $ \sum_i a_i^2 = 1 $ 
 </pre>
 <p>
+效果：<br/>
+\( \sum_i a_i^2 = 1 \)<br/>
 块显示是创建一个前后有间隙的居中的公式。它必须以<code>{{&amp;</code>为开头，以<code>}}$</code>为结束，并且它们都为单独的一行并且不包含其它内容。<br/>
 例如:
 </p>
@@ -1088,6 +1093,81 @@ $ \sum_i a_i^2 = 1 $
 1
  }}$
 </pre>
+<p>
+效果：<br/>
+</p>
+\[
+\sum_i a_i^2
+=
+1
+\]
+<p>
+<br/>
+环境块与块显示有点像，但是它可以使用特殊的环境参数，例如'align'。它的语法和块显示相似，除了第一行是{{$%environment%<br/>
+例如：
+</p>
+<pre>
+{{$%align%
+\sum_i a_i^2 &amp;= 1 + 1 \\
+&amp;= 2.
+}}$
+</pre>
+<p>
+效果：<br/>
+</p>
+\begin{align}
+\sum_i a_i^2 &amp;= 1 + 1 \\
+&amp;= 2.
+\end{align}
+<p>
+<br/>
+<strong>这个高亮是VIM的自动转换的。如果需要HTML渲染，你有两种办法：</strong>
+</p>
+<ol>
+<li>
+使用MathJax网络版来渲染（需要有网）<br/>在你的HTML模板中加入下面这行<br/> <code>&lt;script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;&lt;/script&gt;</code>
+
+<li>
+安装MathJax本地版（这种方法更快，并且不需要网络连接本地存放路径 <em>E:\ChaoData\Programming\JavaScript\MathJax-master.zip</em> ）。将MathJax放进指定目录。并在你的HTML模板中加入下面这行：<br/><code>&lt;script type="text/javascript" src="&lt;mathjax_folder&gt;/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;&lt;/script&gt;</code><br/>mathjax_folder是你硬盘的目录，是MathJax文件所在文件夹相对路径
+
+</ol>
+<p>
+<br/>
+</p>
+<h3 id="toc_5_0_9">块引用</h3>
+<p>
+<br/>
+文本以4个或更多个空格开始为一个块引用
+</p>
+<pre>
+    这是一个块引用。它在Vim不是高亮的但是在HTML中有相应的css样式。块引用通常被用来引用其他文件的一长块文本
+</pre>
+<p>
+效果：<br/>
+</p>
+<blockquote>
+这是一个块引用。它在Vim不是高亮的但是在HTML中有相应的css样式。块引用通常被用来引用其他文件的一长块文本
+</blockquote>
+<p>
+<br/>
+</p>
+<h3 id="toc_5_0_10">注释</h3>
+<p>
+<br/>
+以%%作为行开始的是一个注释
+例如：
+<br/>
+水平线
+<br/>
+以4个或更多破折号开始的行为一个水平线（<code>&lt;hr/&gt;</code>)
+<code>----</code> 
+<br/>
+</p>
+<h3 id="toc_5_0_11">方案</h3>
+<p>
+<br/>
+除了标准的web方案外(e.g. http:, https:, ftp:, etc.),一些特殊的方案也被支持："wiki#:", "local:", "diary:", "file:",等
+</p>
 
             </div>
             <div class="col-md-3" role="complementary">
@@ -1111,11 +1191,12 @@ $ \sum_i a_i^2 = 1 $
         </div>
     </footer>
 
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/docs.min.js"></script>
-    <script type="text/javascript" src="js/highlight.pack.js"></script>
-    <script type="text/javascript" src="js/vimwiki.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/docs.min.js"></script>
+	<script type="text/javascript" src="js/highlight.pack.js"></script>
+	<script type="text/javascript" src="js/vimwiki.js"></script>
+	<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
