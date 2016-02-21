@@ -44,7 +44,7 @@ function FaceConvert(){
 				  .replace(/\/ll/g, '<img src="../images/face/5.gif"/>')
 				  .replace(/\/hx/g, '<img src="../images/face/6.gif"/>')
 				  .replace(/\/bz/g, '<img src="../images/face/7.gif"/>')
-				  .replace(/\/sh/g, '<img src="../images/face/8.gif"/>')
+				  .replace(/\/shui/g, '<img src="../images/face/8.gif"/>')
 				  .replace(/\/dk/g, '<img src="../images/face/9.gif"/>')
 				  .replace(/\/tp/g, '<img src="../images/face/12.gif"/>')
 				  .replace(/\/cy/g, '<img src="../images/face/13.gif"/>')
