@@ -51,6 +51,7 @@ function FaceConvert(){
 				  .replace(/\/jy/g, '<img src="../images/face/14.gif"/>')
 				  .replace(/\/lengh/g, '<img src="../images/face/17.gif"/>')
 				  .replace(/\/tx/g, '<img src="../images/face/20.gif"/>')
+				  .replace(/\/hanx/g, '<img src="../images/face/28.gif"/>')
 				  .replace(/\/fendou/g, '<img src="../images/face/30.gif"/>')
 				  .replace(/\/xu/g, '<img src="../images/face/33.gif"/>')
 				  .replace(/\/shuai/g, '<img src="../images/face/36.gif"/>')
