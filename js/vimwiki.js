@@ -31,6 +31,8 @@ $(document).ready(function() {
         $(this).html('<code>' + $(this).html() + '</code>');
     });
     hljs.initHighlightingOnLoad();
+	var url = document.URL;
+	if(url.indexOf('diary') == -1) return;
 	FaceConvert();
 });
 function FaceConvert(){
