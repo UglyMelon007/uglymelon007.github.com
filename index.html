@@ -40,6 +40,7 @@
                     </li>
                 </ul>
             </nav>
+
     </header>
 
     <!--Container-->
@@ -50,43 +51,50 @@
                 
 <div class="toc">
 <ul class="nav">
-<li><a href="#toc_1">简介</a>
-<li><a href="#toc_2">使用前准备</a>
-<li><a href="#toc_3">映射</a>
+<li><a href="#toc_1"> 简介</a>
+<li><a href="#toc_2"> 使用前准备</a>
+<li><a href="#toc_3"> 映射</a>
 <ul class="nav">
-<li><a href="#toc_3_0_1">全局映射</a>
-<li><a href="#toc_3_0_2">局部映射</a>
-<li><a href="#toc_3_0_3">文本对象</a>
+<li><a href="#toc_3_0_1">0_1 全局映射</a>
+<li><a href="#toc_3_0_2">0_2 局部映射</a>
+<li><a href="#toc_3_0_3">0_3 文本对象</a>
 </ul>
-<li><a href="#toc_4">命令</a>
+<li><a href="#toc_4"> 命令</a>
 <ul class="nav">
-<li><a href="#toc_4_0_1">全局命令</a>
-<li><a href="#toc_4_0_2">局部命令</a>
+<li><a href="#toc_4_0_1">0_1 全局命令</a>
+<li><a href="#toc_4_0_2">0_2 局部命令</a>
 </ul>
-<li><a href="#toc_5">Wiki语法</a>
+<li><a href="#toc_5"> Wiki语法</a>
 <ul class="nav">
-<li><a href="#toc_5_0_1">字体类型</a>
-<li><a href="#toc_5_0_2">链接</a>
-<li><a href="#toc_5_0_3">标题</a>
-<li><a href="#toc_5_0_4">段落</a>
-<li><a href="#toc_5_0_5">列表<sub><small>(项目符号后面必须有个空格)</small></sub></a>
-<li><a href="#toc_5_0_6">表格</a>
-<li><a href="#toc_5_0_7">预定义格式化文本</a>
-<li><a href="#toc_5_0_8">数学公式</a>
-<li><a href="#toc_5_0_9">块引用</a>
-<li><a href="#toc_5_0_10">注释</a>
-<li><a href="#toc_5_0_11">方案</a>
-<li><a href="#toc_5_0_12">资源嵌入</a>
-<li><a href="#toc_5_0_13">缩略图</a>
+<li><a href="#toc_5_0_1">0_1 字体类型</a>
+<li><a href="#toc_5_0_2">0_2 链接</a>
+<li><a href="#toc_5_0_3">0_3 标题</a>
+<li><a href="#toc_5_0_4">0_4 段落</a>
+<li><a href="#toc_5_0_5">0_5 列表<sub><small>(项目符号后面必须有个空格)</small></sub></a>
+<li><a href="#toc_5_0_6">0_6 表格</a>
+<li><a href="#toc_5_0_7">0_7 预定义格式化文本</a>
+<li><a href="#toc_5_0_8">0_8 数学公式</a>
+<li><a href="#toc_5_0_9">0_9 块引用</a>
+<li><a href="#toc_5_0_10">0_10 注释</a>
+<li><a href="#toc_5_0_11">0_11 方案</a>
+<li><a href="#toc_5_0_12">0_12 资源嵌入</a>
+<li><a href="#toc_5_0_13">0_13 缩略图</a>
 </ul>
-<li><a href="#toc_6">折叠大纲<sub><small>(仅vimwiki中可用)</small></sub></a>
-<li><a href="#toc_7">占位符</a>
+<li><a href="#toc_6"> 折叠大纲<sub><small>(仅vimwiki中可用)</small></sub></a>
+<li><a href="#toc_7"> 占位符</a>
+<li><a href="#toc_8"> 任务清单</a>
+<li><a href="#toc_9"> 表格</a>
+<li><a href="#toc_10"> 日志</a>
+<ul class="nav">
+<li><a href="#toc_10_0_1">_0_1 集成日志</a>
+</ul>
+<li><a href="#toc_11"> 选项</a>
 </ul>
 </div>
 <p>
 <br/>
 </p>
-<h1 id="toc_1">简介</h1>
+<h1 id="toc_1"> 简介</h1>
 <p>
 <br/>
 Vimwiki是Vim中一个私人的wiki--每个链接文本有它们自己的高亮语法。
@@ -139,7 +147,7 @@ Vimwiki是Vim中一个私人的wiki--每个链接文本有它们自己的高亮�
 <hr/>
 <br/>
 </p>
-<h1 id="toc_2">使用前准备</h1>
+<h1 id="toc_2"> 使用前准备</h1>
 <p>
 <br/>
 确定在你的_vimrc文件中有以下设置(没有它们vimwiki将不会正常工作):
@@ -153,7 +161,7 @@ Vimwiki是Vim中一个私人的wiki--每个链接文本有它们自己的高亮�
 <hr/>
 <br/>
 </p>
-<h1 id="toc_3">映射</h1>
+<h1 id="toc_3"> 映射</h1>
 <p>
 <br/>
 在vimwiki中有全局映射与局部映射两种
@@ -162,7 +170,7 @@ Vimwiki是Vim中一个私人的wiki--每个链接文本有它们自己的高亮�
 <strong><em>&lt;Plug&gt;一般为:</em></strong>
 <br/>
 </p>
-<h3 id="toc_3_0_1">全局映射</h3>
+<h3 id="toc_3_0_1">0_1 全局映射</h3>
 <pre>
 [count]&lt;Leader&gt;ww or &lt;Plug&gt;VimwikiIndex
 	打开第count个索引文件
@@ -241,7 +249,7 @@ Vimwiki是Vim中一个私人的wiki--每个链接文本有它们自己的高亮�
 <p>
 <br/>
 </p>
-<h3 id="toc_3_0_2">局部映射</h3>
+<h3 id="toc_3_0_2">0_2 局部映射</h3>
 <table>
 <tr>
 <th>
@@ -538,7 +546,7 @@ vimwiki-table-mappings
 </table>
 <br/>
 </p>
-<h3 id="toc_3_0_3">文本对象</h3>
+<h3 id="toc_3_0_3">0_3 文本对象</h3>
 <p>
 <br/>
 <strong>没搞明白是啥。。。</strong>
@@ -595,11 +603,11 @@ ic
 <hr/>
 <br/>
 </p>
-<h1 id="toc_4">命令</h1>
+<h1 id="toc_4"> 命令</h1>
 <p>
 <br/>
 </p>
-<h3 id="toc_4_0_1">全局命令</h3>
+<h3 id="toc_4_0_1">0_1 全局命令</h3>
 <p>
 <br/>
 <table>
@@ -654,7 +662,7 @@ ic
 </table>
 <br/>
 </p>
-<h3 id="toc_4_0_2">局部命令</h3>
+<h3 id="toc_4_0_2">0_2 局部命令</h3>
 <p>
 <br/>
 <table>
@@ -846,7 +854,7 @@ ic
 <hr/>
 <br/>
 </p>
-<h1 id="toc_5">Wiki语法</h1>
+<h1 id="toc_5"> Wiki语法</h1>
 <p>
 <br/>
 在这有很多不同的wikies。它们中许多都有自己的语法并且vimwiki的默认语法也不例外。<br/>
@@ -868,7 +876,7 @@ Vimwiki也支持替换语法，像Markdown和MediaWiki等等。像头部，引�
 Vimwiki2HTML这个功能目前只被默认语法支持。<br/>
 <br/>
 </p>
-<h3 id="toc_5_0_1">字体类型</h3>
+<h3 id="toc_5_0_1">0_1 字体类型</h3>
 <p>
 <br/>
 下面有一些字型来修饰你的文本：
@@ -884,7 +892,7 @@ _斜体_
 <p>
 <br/>
 </p>
-<h3 id="toc_5_0_2">链接</h3>
+<h3 id="toc_5_0_2">0_2 链接</h3>
 <p>
 <br/>
 <strong>Wiki链接</strong>
@@ -922,7 +930,7 @@ ftp://vim.org
 <em>这个就不说了 以后写Markdown时会说明的(有道笔记Markdown学习笔记中已写）</em><br/>
 <br/>
 </p>
-<h3 id="toc_5_0_3">标题</h3>
+<h3 id="toc_5_0_3">0_3 标题</h3>
 <p>
 <br/>
 </p>
@@ -943,14 +951,14 @@ ftp://vim.org
 <p>
 <br/>
 </p>
-<h3 id="toc_5_0_4">段落</h3>
+<h3 id="toc_5_0_4">0_4 段落</h3>
 <p>
 <br/>
 一组不缩进的数据行为一个段落。<br/>
 段落与段落用一个空行分开<br/>
 <br/>
 </p>
-<h3 id="toc_5_0_5">列表<sub><small>(项目符号后面必须有个空格)</small></sub></h3>
+<h3 id="toc_5_0_5">0_5 列表<sub><small>(项目符号后面必须有个空格)</small></sub></h3>
 <p>
 <br/>
 <strong>无序列表：</strong>
@@ -1017,7 +1025,7 @@ Term 2::
 <p>
 <br/>
 </p>
-<h3 id="toc_5_0_6">表格</h3>
+<h3 id="toc_5_0_6">0_6 表格</h3>
 <p>
 <br/>
 通过往每个用分隔符|分隔的单元格内插入内容来创建表格。你可以在单元格内插入内置的wiki语法符号。包括格式化字体及链接。<br/>
@@ -1050,7 +1058,7 @@ Term 2::
 <p>
 <br/>
 </p>
-<h3 id="toc_5_0_7">预定义格式化文本</h3>
+<h3 id="toc_5_0_7">0_7 预定义格式化文本</h3>
 <p>
 <br/>
 </p>
@@ -1074,7 +1082,7 @@ Term 2::
 你可以为预格式化文本设置高亮代码段<br/>
 <br/>
 </p>
-<h3 id="toc_5_0_8">数学公式</h3>
+<h3 id="toc_5_0_8">0_8 数学公式</h3>
 <p>
 <br/>
 数据公式高亮显示并且可以在HTML中使用这个强大的开源显示引擎MathJax来渲染它。(<a href="https://www.mathjax.org//">MathJax</a>).<br/>
@@ -1141,7 +1149,7 @@ $ \sum_i a_i^2 = 1 $
 <p>
 <br/>
 </p>
-<h3 id="toc_5_0_9">块引用</h3>
+<h3 id="toc_5_0_9">0_9 块引用</h3>
 <p>
 <br/>
 文本以4个或更多个空格开始为一个块引用
@@ -1158,7 +1166,7 @@ $ \sum_i a_i^2 = 1 $
 <p>
 <br/>
 </p>
-<h3 id="toc_5_0_10">注释</h3>
+<h3 id="toc_5_0_10">0_10 注释</h3>
 <p>
 <br/>
 以%%作为行开始的是一个注释
@@ -1170,7 +1178,7 @@ $ \sum_i a_i^2 = 1 $
 <code>----</code> 
 <br/>
 </p>
-<h3 id="toc_5_0_11">方案</h3>
+<h3 id="toc_5_0_11">0_11 方案</h3>
 <p>
 <br/>
 除了标准的web方案外(e.g. http:, https:, ftp:, etc.),一些特殊的方案也被支持："wiki#:", "local:", "diary:", "file:"，和schemeless.<br/>
@@ -1231,7 +1239,7 @@ file://abs_path_to_html#/relpath/wikipage.html
 当<code>vimwiki-option-maxhi</code>等于1，一个明显的高亮样式被使用标识没有指定目标的schemeless链接(<em>只在vim里面有效</em>)。其它链接则没有这些变化，即使他们引用的文件不存在。<br/>
 <br/>
 </p>
-<h3 id="toc_5_0_12">资源嵌入</h3>
+<h3 id="toc_5_0_12">0_12 资源嵌入</h3>
 <p>
 <br/>
 嵌入链接(Wiki-Include)<br/>
@@ -1264,7 +1272,7 @@ Wiki-include链接可以使用任何被支持的方案，可以是绝对和相�
 一个测试的特性允许你提供你自己的处理程序为wiki-include链接。<br/>
 <br/>
 </p>
-<h3 id="toc_5_0_13">缩略图</h3>
+<h3 id="toc_5_0_13">0_13 缩略图</h3>
 <p>
 <br/>
 缩略图链接<br/>
@@ -1278,9 +1286,10 @@ Wiki-include链接可以使用任何被支持的方案，可以是绝对和相�
 &lt;img src="http://../thumbnail.jpg /&gt;&lt;/a&gt;
 </pre>
 <p>
+<hr/>
 <br/>
 </p>
-<h1 id="toc_6">折叠大纲<sub><small>(仅vimwiki中可用)</small></sub></h1>
+<h1 id="toc_6"> 折叠大纲<sub><small>(仅vimwiki中可用)</small></sub></h1>
 <p>
 <br/>
 Vimwiki使用标题和预定义块可以折叠或展开内容。<br/>
@@ -1300,52 +1309,18 @@ Vimwiki使用标题和预定义块可以折叠或展开内容。<br/>
 折叠命令：zM zm或zC zc 展开命令：zR zr或zO zo
 </pre>
 <p>
+<hr/>
 <br/>
 </p>
-<h1 id="toc_7">占位符</h1>
+<h1 id="toc_7"> 占位符</h1>
 <p>
 <br/>
-<strong>%toc</strong><br/>
+<strong>%t o c</strong><br/>
 你可以添加一个从wiki中生成内容目录在你的HTML页面中。
 </p>
 <pre>
+%t o c 标题可以是任意文字
 </pre>
-<h1>标题可以是任意文字</h1>
-<div class="toc">
-<ul class="nav">
-<li><a href="#toc_1">简介</a>
-<li><a href="#toc_2">使用前准备</a>
-<li><a href="#toc_3">映射</a>
-<ul class="nav">
-<li><a href="#toc_3_0_1">全局映射</a>
-<li><a href="#toc_3_0_2">局部映射</a>
-<li><a href="#toc_3_0_3">文本对象</a>
-</ul>
-<li><a href="#toc_4">命令</a>
-<ul class="nav">
-<li><a href="#toc_4_0_1">全局命令</a>
-<li><a href="#toc_4_0_2">局部命令</a>
-</ul>
-<li><a href="#toc_5">Wiki语法</a>
-<ul class="nav">
-<li><a href="#toc_5_0_1">字体类型</a>
-<li><a href="#toc_5_0_2">链接</a>
-<li><a href="#toc_5_0_3">标题</a>
-<li><a href="#toc_5_0_4">段落</a>
-<li><a href="#toc_5_0_5">列表<sub><small>(项目符号后面必须有个空格)</small></sub></a>
-<li><a href="#toc_5_0_6">表格</a>
-<li><a href="#toc_5_0_7">预定义格式化文本</a>
-<li><a href="#toc_5_0_8">数学公式</a>
-<li><a href="#toc_5_0_9">块引用</a>
-<li><a href="#toc_5_0_10">注释</a>
-<li><a href="#toc_5_0_11">方案</a>
-<li><a href="#toc_5_0_12">资源嵌入</a>
-<li><a href="#toc_5_0_13">缩略图</a>
-</ul>
-<li><a href="#toc_6">折叠大纲<sub><small>(仅vimwiki中可用)</small></sub></a>
-<li><a href="#toc_7">占位符</a>
-</ul>
-</div>
 <p>
 <strong>%title</strong><br/>
 对于从wiki页面转过来的html，它默认的名称是这个文件的文件名。
@@ -1356,14 +1331,156 @@ Vimwiki使用标题和预定义块可以折叠或展开内容。<br/>
 <strong>%nohtml</strong><br/>
 如果你不想将一个wiki页面转换为html页面，可以在它里面放入<code>%nohtml</code><br/>
 <strong>%template</strong>
-为一个wiki页面应用一个具体的HTML模板，在其内放入<code>%template name</code>
+为一个wiki页面应用一个具体的HTML模板，在其内放入<code>%template name</code><br/>
+<hr/>
+<br/>
+</p>
+<h1 id="toc_8"> 任务清单</h1>
+<p>
+<br/>
+你可以有一个任务列表--列表内的项目你可以选择或不选择<br/>
+思考下面的例子：
+</p>
+<pre>
+按\tt(我设置的快捷键是这个，默认为C+Space）来选择或取消选择
+= Toggleable list of todo items =
+  * [X] Toggle list item on/off.
+    * [X] Simple toggling between [ ] and [X].
+    * [X] All list's subitems should be toggled on/off appropriately.
+    * [X] Toggle child subitems only if current line is list item
+    * [X] Parent list item should be toggled depending on it's child items.
+  * [X] Make numbered list items toggleable too
+  * [X] Add highlighting to list item boxes
+  * [X] Add [ ] to the next created with o, O and &lt;CR&gt; list item.
+</pre>
+<p>
+当子项目改变时，父项目可以被改变。[ ]之间的符号取决于子项目的选择数量(默认有" .oOX"五个符号)。
+列表项目缩进和项目符号可以可以使用几个映射下操作。下边的的例子演示了默认的语法行为当<code>vimwiki-option-list_margin=1</code>
+<table class='center'>
+<tr>
+<th>
+Mapping
+</th>
+<th>
+Input
+</th>
+<th>
+Output
+</th>
+</tr>
+<tr>
+<td>
+glm
+</td>
+<td>
+^item
+</td>
+<td>
+^ - iatem
+</td>
+</tr>
+<tr>
+<td>
+glm
+</td>
+<td>
+^     item
+</td>
+<td>
+^     - item
+</td>
+</tr>
+<tr>
+<td>
+gll
+</td>
+<td>
+^ - item
+</td>
+<td>
+^item
+</td>
+</tr>
+<tr>
+<td>
+glm
+</td>
+<td>
+^   # item
+</td>
+<td>
+^   item
+</td>
+</tr>
+<tr>
+<td>
+gl*
+</td>
+<td>
+^ item
+</td>
+<td>
+^ * item
+</td>
+</tr>
+<tr>
+<td>
+gl-
+</td>
+<td>
+^  item
+</td>
+<td>
+^  - item
+</td>
+</tr>
+<tr>
+<td>
+gl3
+</td>
+<td>
+^   item
+</td>
+<td>
+^   # itaem
+</td>
+</tr>
+</table>
+<hr/>
+<br/>
+</p>
+<h1 id="toc_9"> 表格</h1>
+<p>
+<br/>
+使用 <code>:VimwikiTable</code>命令创建一个两行五列的默认表格<br/>
+当你按<code>&lt;TAB&gt;</code>,<code>&lt;CR&gt;</code>或者离开插入模式时，表格就会自动格式化<br/>
+你只需要按<code>&lt;TAB&gt;</code>并且写入新值就可以非常容易的创建一个漂亮的文本表格<br/>
+<hr/>
+<br/>
+</p>
+<h1 id="toc_10"> 日志</h1>
+<p>
+<br/>
+日志可以帮助你写日常笔记。在vimwiki中你可以非常容易的添加一些有先后顺序的信息。只需要<code>\w\w</code>就可以创建一个以当前日期为名字的日志。<br/>
+可以使用<code>\w\i</code>生成所有日记链接。(<strong>它仅可以在日志index文件中使用</strong>)<br/>
+<br/>
+</p>
+<h3 id="toc_10_0_1">_0_1 集成日志</h3>
+<p>
+<br/>
+你可以安装Calendar.vim来管理你的日志。(<sub><small>发现它用来补日记挺好使的</small></sub>)<br/>
+<br/>
+</p>
+<h1 id="toc_11"> 选项</h1>
+<p>
+<br/>
+这有一些全局与局部选项来谐调vimwiki.<br/>
 </p>
 
+               <div id="disqus_thread"></div>
             </div>
             <div class="col-md-3" role="complementary">
                 <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" id="navSidebar">
-                    <ul class="nav bs-docs-sidenav">
-                    </ul>
                 </nav>
             </div>
         </div>
@@ -1381,12 +1498,14 @@ Vimwiki使用标题和预定义块可以折叠或展开内容。<br/>
         </div>
     </footer>
 
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/docs.min.js"></script>
-	<script type="text/javascript" src="js/highlight.pack.js"></script>
-	<script type="text/javascript" src="js/vimwiki.js"></script>
-	<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/docs.min.js"></script>
+    <script type="text/javascript" src="js/highlight.pack.js"></script>
+    <script type="text/javascript" src="js/vimwiki.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
 </body>
 
 </html>

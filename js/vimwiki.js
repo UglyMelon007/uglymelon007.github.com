@@ -1,5 +1,77 @@
+var kwiki = {
+    getCSS: function(url) {
+        var tag = '<link rel="stylesheet" href="' + url + '" />';
+        $('body').append(tag);
+    },
+    insertCSS: function(url) {
+        $.get(url, function(res) {
+            var tag = '<style>' + res + '</stle>';
+            $('body').append(tag);
+        });
+    },
+    insertScript: function(url, bottle) {
+        var tag = '<script src=' + url + '></script>';
+        if (!bottle) bottle = 'head';
+        $(bottle).append(tag);
+    },
+    loadCmt: function(provider) {
+        if ($('#no-comment').length > 0) return;
+
+        var thread, extraCSS, theJS;
+
+        if (provider == 'disqus') {
+            window.disqus_iframe_css = HOST_ROOT + 'disqus_iframe.css';
+            window.disqus_identifier = window.kwiki_identifier || undefined;
+            thread = $('<div id="disqus_thread">');
+            extraCSS = HOST_ROOT + 'disqus.css';
+            //theJS = HOST_ROOT + 'disqus_loader.js';
+            theJS = 'http://kwiki.disqus.com/embed.js';
+        } else if (provider == 'intensedebate') {
+            window.idcomments_acct = '5a60a7c6da8072e3edcb67fb0e7850e9';
+            window.idcomments_post_id = kwiki_identifier;
+            window.idcomments_post_url = undefined;
+            thread = $('<div id="idc-container"><span class="startloading">Loading comments..<span></div>');
+            //extraCSS = HOST_ROOT + 'intensedebate.css';
+            theJS = 'http://www.intensedebate.com/js/genericCommentWrapperV2.js';
+        } else {
+            return;
+        }
+
+        $('#main').append(thread);
+
+        var win = $(window);
+
+        function load() {
+            if (win.scrollTop() + win.height() > thread.offset().top - 250) {
+
+                if (extraCSS) kwiki.getCSS(extraCSS);
+
+                $.getScript(theJS);
+
+                win.unbind('scroll');
+            }
+        }
+
+        win.bind('scroll', load);
+        load();
+    }
+};
+var HOST_ROOT = 'https://uglymelon007.github.io/';
+var kwiki_identifier = 'wiki' + window.location.pathname.replace(/\//g, '_')
+		.replace('index.html', '')
+		.replace('.html', '');
 $(document).ready(function() {
+	if (!$.browser.msie) kwiki.loadCmt('disqus');	
+	$("a[href^='http://']").each(function(){
+		this.target = "_blank";
+	});
+	
+	$("a[href^='https://']").each(function(){
+		this.target = "_blank";
+	});
+
     $(".toc").appendTo($("#navSidebar"));
+
     $('table').each(function() {
         $(this).addClass('table table-striped table-condensed table-hover');
     });
@@ -14,6 +86,7 @@ $(document).ready(function() {
 
     // Fade Out Back-To-Top-Link on new page
     $('.backtotop').fadeOut();
+
     $(window).scroll(function() {
         if ($(this).scrollTop() > 100) {
             $('.backtotop').fadeIn();
@@ -21,15 +94,18 @@ $(document).ready(function() {
             $('.backtotop').fadeOut();
         }
     });
+
     $('.backtotop').click(function() {
         $("html, body").animate({
             scrollTop: 0
         }, 600);
         return false;
     });
+
     $('pre').each(function() {
         $(this).html('<code>' + $(this).html() + '</code>');
     });
+
     hljs.initHighlightingOnLoad();
 	var url = document.URL;
 	if(url.indexOf('diary') == -1) return;
