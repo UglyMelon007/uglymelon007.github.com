@@ -61,7 +61,8 @@ var kwiki_identifier = 'wiki' + window.location.pathname.replace(/\//g, '_')
 		.replace('index.html', '')
 		.replace('.html', '');
 $(document).ready(function() {
-	if (!$.browser.msie) kwiki.loadCmt('disqus');	
+    kwiki.loadCmt('disqus');	
+	
 	$("a[href^='http://']").each(function(){
 		this.target = "_blank";
 	});
