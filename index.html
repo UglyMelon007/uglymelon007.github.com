@@ -76,7 +76,11 @@
 <li><a href="#toc_5_0_9">块引用</a>
 <li><a href="#toc_5_0_10">注释</a>
 <li><a href="#toc_5_0_11">方案</a>
+<li><a href="#toc_5_0_12">资源嵌入</a>
+<li><a href="#toc_5_0_13">缩略图</a>
 </ul>
+<li><a href="#toc_6">折叠大纲(<sub><small>仅vimwiki中可用</small></sub>)</a>
+<li><a href="#toc_7">占位符</a>
 </ul>
 </div>
 <p>
@@ -1169,7 +1173,138 @@ $ \sum_i a_i^2 = 1 $
 <h3 id="toc_5_0_11">方案</h3>
 <p>
 <br/>
-除了标准的web方案外(e.g. http:, https:, ftp:, etc.),一些特殊的方案也被支持："wiki#:", "local:", "diary:", "file:"，和schemeless.
+除了标准的web方案外(e.g. http:, https:, ftp:, etc.),一些特殊的方案也被支持："wiki#:", "local:", "diary:", "file:"，和schemeless.<br/>
+vi中"wiki:#","diary"和schemeless链接可以被自动打开，其他所有链接可用用这个系统命令打开。(哪个命令看原文，或者我以后改进文档或会添加）<br/>
+<strong>Interwiki</strong><br/>
+如果你有不只一个wiki，你可以通过在他们之间添加一个"wiki#"前缀来创建interwiki链接:
+例如：
+</p>
+<pre>
+[[wiki#:this is a link]]
+或：
+[[wiki#:this is a link source|Description of the link]]
+这个数字"#"的范围是0到N-1,代表g:vimwiki_list中的wiki
+</pre>
+<p>
+<strong>Diary</strong><br/>
+这个日志方案被用来简化进入日志的链接。
+</p>
+<pre>
+[[diary:2012-03-06]]
+</pre>
+<p>
+这个方案可以让我们省略vimwiki-option-diary_rel_path包含的路径，它可以避免在subwiki页面中使用这样的链接：
+</p>
+<pre>
+../../diary/2012-03-05]]
+</pre>
+<p>
+<strong>Local</strong><br/>
+可以使用一个指定的路径在当前页面中建立与一个不是wiki页面的本地资源之间的关系：
+</p>
+<pre>
+[[local:../assets/data.csv|data(CSV)]]
+当进入或转换为html时，local-scheme的链接不用修改
+</pre>
+<p>
+<strong>File</strong><br/>
+文件方案允许你使用绝对路径与扩展去直接链接任意资源。
+</p>
+<pre>
+[[file://home/somebody/a/b/c/music.mp3]]
+</pre>
+<p>
+<strong>Schemeless</strong><br/>
+Schemeless URLS(无模式地址）是默认的方案，除了在转换为html时在内部被当"wiki#:"URLs处理。
+Schemeless链接一字不差的转换为简单的相关路径：
+</p>
+<pre>
+replath/wikipage.html
+</pre>
+<p>
+"wiki#:","local:"和"diary:"这些方案使用绝对路径做为URLs：
+</p>
+<pre>
+file://abs_path_to_html#/relpath/wikipage.html
+</pre>
+<p>
+当<code>vimwiki-option-maxhi</code>等于1，一个明显的高亮样式被使用标识没有指定目标的schemeless链接(<em>只在vim里面有效</em>)。其它链接则没有这些变化，即使他们引用的文件不存在。<br/>
+<br/>
+</p>
+<h3 id="toc_5_0_12">资源嵌入</h3>
+<p>
+<br/>
+嵌入链接(Wiki-Include)<br/>
+使用<code>{{和}}</code>分隔符的链接表示这个内容是Html以外的，而不是一个超链接。<br/>
+Wiki-include链接可以使用任何被支持的方案，可以是绝对和相对路径，不需要用使用扩展之类结束。<br/>
+它最主要的目的是包含图片<br/>
+</p>
+<pre>
+一个本地URL嵌入资源：
+{{local:../../images/vimwiki_logo.png}}
+或者一个互联网嵌入资源：
+{{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png}}
+
+带有替换文字的嵌入图片
+{{http://vimwiki/images/vimwiki_log.png|Vimwiki}}
+相应的HTML
+&lt;img src="http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png" alt="Vimwiki"/&gt;
+
+带有替换文字并有一些样式的嵌入图片
+{{http://.../vimwiki.png|cool stuff|style="width:160px; height:120px;"}}
+相应的HTML
+&lt;img src="http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png" alt="cool stuff" style="width:150px; height:120px"/&gt;
+
+没有替换文本但有css类的嵌入图片
+{{http://.../vimwiki_logo.png||class="center flow blabla"}}
+相应的HTML: 
+&lt;img src="http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png" alt="" class="center flow blabla"/&gt;
+</pre>
+<p>
+一个测试的特性允许你提供你自己的处理程序为wiki-include链接。<br/>
+<br/>
+</p>
+<h3 id="toc_5_0_13">缩略图</h3>
+<p>
+<br/>
+缩略图链接<br/>
+缩略图链接的结构如下：
+</p>
+<pre>
+[[http://someaddr.com/bigpicture.jpg|{{http://someaddr.com/thumbnail.jpg}}]]
+
+相应的HTMl为
+&lt;a href="http://someaddr.com/ ... /.jpg"&gt;
+&lt;img src="http://../thumbnail.jpg /&gt;&lt;/a&gt;
+</pre>
+<p>
+<br/>
+</p>
+<h1 id="toc_6">折叠大纲(<sub><small>仅vimwiki中可用</small></sub>)</h1>
+<p>
+<br/>
+Vimwiki使用标题和预定义块可以折叠或展开内容。<br/>
+或者使用折叠列表替代。<br/>
+折叠列表例子：
+</p>
+<pre>
+= My current task =
+  * [ ] Do stuff 1
+    * [ ] Do substuff 1.1
+    * [ ] Do substuff 1.2
+      * [ ] Do substuff 1.2.1
+      * [ ] Do substuff 1.2.2
+    * [ ] Do substuff 1.3
+  * [ ] Do stuff 2
+  * [ ] Do stuff 3
+折叠命令：zM zm或zC zc 展开命令：zR zr或zO zo
+</pre>
+<p>
+<br/>
+</p>
+<h1 id="toc_7">占位符</h1>
+<p>
+<br/>
 </p>
 
             </div>
