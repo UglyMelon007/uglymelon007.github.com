@@ -79,7 +79,7 @@
 <li><a href="#toc_5_0_12">资源嵌入</a>
 <li><a href="#toc_5_0_13">缩略图</a>
 </ul>
-<li><a href="#toc_6">折叠大纲(<sub><small>仅vimwiki中可用</small></sub>)</a>
+<li><a href="#toc_6">折叠大纲<sub><small>(仅vimwiki中可用)</small></sub></a>
 <li><a href="#toc_7">占位符</a>
 </ul>
 </div>
@@ -132,7 +132,7 @@ Vimwiki是Vim中一个私人的wiki--每个链接文本有它们自己的高亮�
 <a href="diary/diary.html">Diary</a> -- 日记
 
 <li>
-<a href="ToDo.html">ToDo</a> -- 待做事项
+<a href="todo.html">todo</a> -- 待做事项
 
 </ul>
 <p>
@@ -1280,7 +1280,7 @@ Wiki-include链接可以使用任何被支持的方案，可以是绝对和相�
 <p>
 <br/>
 </p>
-<h1 id="toc_6">折叠大纲(<sub><small>仅vimwiki中可用</small></sub>)</h1>
+<h1 id="toc_6">折叠大纲<sub><small>(仅vimwiki中可用)</small></sub></h1>
 <p>
 <br/>
 Vimwiki使用标题和预定义块可以折叠或展开内容。<br/>
@@ -1305,6 +1305,58 @@ Vimwiki使用标题和预定义块可以折叠或展开内容。<br/>
 <h1 id="toc_7">占位符</h1>
 <p>
 <br/>
+<strong>%toc</strong><br/>
+你可以添加一个从wiki中生成内容目录在你的HTML页面中。
+</p>
+<pre>
+</pre>
+<h1>标题可以是任意文字</h1>
+<div class="toc">
+<ul class="nav">
+<li><a href="#toc_1">简介</a>
+<li><a href="#toc_2">使用前准备</a>
+<li><a href="#toc_3">映射</a>
+<ul class="nav">
+<li><a href="#toc_3_0_1">全局映射</a>
+<li><a href="#toc_3_0_2">局部映射</a>
+<li><a href="#toc_3_0_3">文本对象</a>
+</ul>
+<li><a href="#toc_4">命令</a>
+<ul class="nav">
+<li><a href="#toc_4_0_1">全局命令</a>
+<li><a href="#toc_4_0_2">局部命令</a>
+</ul>
+<li><a href="#toc_5">Wiki语法</a>
+<ul class="nav">
+<li><a href="#toc_5_0_1">字体类型</a>
+<li><a href="#toc_5_0_2">链接</a>
+<li><a href="#toc_5_0_3">标题</a>
+<li><a href="#toc_5_0_4">段落</a>
+<li><a href="#toc_5_0_5">列表<sub><small>(项目符号后面必须有个空格)</small></sub></a>
+<li><a href="#toc_5_0_6">表格</a>
+<li><a href="#toc_5_0_7">预定义格式化文本</a>
+<li><a href="#toc_5_0_8">数学公式</a>
+<li><a href="#toc_5_0_9">块引用</a>
+<li><a href="#toc_5_0_10">注释</a>
+<li><a href="#toc_5_0_11">方案</a>
+<li><a href="#toc_5_0_12">资源嵌入</a>
+<li><a href="#toc_5_0_13">缩略图</a>
+</ul>
+<li><a href="#toc_6">折叠大纲<sub><small>(仅vimwiki中可用)</small></sub></a>
+<li><a href="#toc_7">占位符</a>
+</ul>
+</div>
+<p>
+<strong>%title</strong><br/>
+对于从wiki页面转过来的html，它默认的名称是这个文件的文件名。
+</p>
+<pre>
+</pre>
+<p>
+<strong>%nohtml</strong><br/>
+如果你不想将一个wiki页面转换为html页面，可以在它里面放入<code>%nohtml</code><br/>
+<strong>%template</strong>
+为一个wiki页面应用一个具体的HTML模板，在其内放入<code>%template name</code>
 </p>
 
             </div>
