@@ -1,36 +1,4 @@
-var kwiki_identifier = 'wiki' + window.location.pathname.replace(/\//g, '_')
-		.replace('index.html', '')
-		.replace('.html', '');
-var kwiki = {
-    loadCmt: function(provider) {
-        if ($('#no-comment').length > 0) return;
-        var thread, theJS;
-        if (provider == 'disqus') {
-            window.disqus_identifier = window.kwiki_identifier || undefined;
-            thread = $('<div id="disqus_thread">');
-            theJS = 'https://uglymelon007.disqus.com/embed.js'; 
-        } else {
-            return;
-        }
-
-        $('#main').append(thread);
-
-        var win = $(window);
-
-        function load() {
-            if (win.scrollTop() + win.height() > thread.offset().top - 250) {
-                $.getScript(theJS);
-                win.unbind('scroll');
-            }
-        }
-        win.bind('scroll', load);
-        load();
-    }
-};
-
 $(document).ready(function() {
-    kwiki.loadCmt('disqus');	
-	
 	$("a[href^='http://']").each(function(){
 		this.target = "_blank";
 	});
@@ -106,6 +74,7 @@ function FaceConvert(){
 				  .replace(/\/qiao/g, '<img src="../images/face/38.gif"/>')
 	 			  .replace(/\/zj/g, '<img src="../images/face/39.gif"/>')
 	 			  .replace(/\/ch/g, '<img src="../images/face/40.gif"/>')
+	 			  .replace(/\/kb/g, '<img src="../images/face/41.gif"/>')
 				  .replace(/\/gz/g, '<img src="../images/face/42.gif"/>')
 				  .replace(/\/huaix/g, '<img src="../images/face/44.gif"/>')
 				  .replace(/\/bs/g, '<img src="../images/face/48.gif"/>')
