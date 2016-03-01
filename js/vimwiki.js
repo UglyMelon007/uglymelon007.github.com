@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	
 	$("a[href^='http://']").each(function(){
 		this.target = "_blank";
 	});
@@ -75,6 +74,7 @@ function FaceConvert(){
 				  .replace(/\/qiao/g, '<img src="../images/face/38.gif"/>')
 	 			  .replace(/\/zj/g, '<img src="../images/face/39.gif"/>')
 	 			  .replace(/\/ch/g, '<img src="../images/face/40.gif"/>')
+	 			  .replace(/\/kb/g, '<img src="../images/face/41.gif"/>')
 				  .replace(/\/gz/g, '<img src="../images/face/42.gif"/>')
 				  .replace(/\/huaix/g, '<img src="../images/face/44.gif"/>')
 				  .replace(/\/bs/g, '<img src="../images/face/48.gif"/>')
