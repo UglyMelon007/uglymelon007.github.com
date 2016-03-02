@@ -13,7 +13,8 @@ var kwiki = {
         var win = $(window);
         function load() {
             if (win.scrollTop() + win.height() > thread.offset().top - 250) {
-				kwili.insertScript(theJS);
+			   var tag = '<script src=' + theJS + '></script>';
+               $('body').append(tag);
                 win.unbind('scroll');
             }
         }
@@ -23,7 +24,7 @@ var kwiki = {
 };
 
 $(document).ready(function() {
-	//kwiki.loadCmt('disqus');
+	kwiki.loadCmt('disqus');
 	$("a[href^='http://']").each(function(){
 		this.target = "_blank";
 	});
