@@ -1,26 +1,21 @@
 var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape( "%3Cspan id='cnzz_stat_icon_1257740965'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol +"s95.cnzz.com/z_stat.php%3Fid%3D1257740965%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
-var theJS = 'https://uglymelon007.disqus.com/embed.js';
-$.getScript(theJS);
-//var kwiki = {
-//    loadCmt: function(provider) {
-//        var thread, extraCSS, theJS;
-//        thread = $('<div id="disqus_thread">');
-//        theJS = 'https://uglymelon007.disqus.com/embed.js';
-//        $('#main').append(thread);
-//        var win = $(window);
-//        function load() {
-//            if (win.scrollTop() + win.height() > thread.offset().top - 250) {
-//                $.getScript(theJS);
-//                win.unbind('scroll');
-//            }
-//        }
-//        win.bind('scroll', load);
-//        load();
-//    }
-//};
+var kwiki = {
+    loadCmt: function() {
+        var thread = $('<div id="disqus_thread">');
+        $('#main').append(thread);
+        var win = $(window);
+        function load() {
+            if (win.scrollTop() + win.height() > thread.offset().top - 250) {
+                win.unbind('scroll');
+            }
+        }
+        win.bind('scroll', load);
+        load();
+    }
+};
 
 $(document).ready(function() {
-	//kwiki.loadCmt('disqus');
+	kwiki.loadCmt();
 	$("a[href^='http://']").each(function(){
 		this.target = "_blank";
 	});
