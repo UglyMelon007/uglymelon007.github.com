@@ -40,10 +40,11 @@
                     </li>
                 </ul>
             </nav>
+
     </header>
 
     <!--Container-->
-    <div class="container bs-docs-container">
+    <div class="container bs-docs-container" id="main">
         <div class="row">
             <div class="col-md-9" role="main">
                 <!--Body content-->
@@ -55,11 +56,20 @@
 Axure这个工具 咋说呢 真难用 说完了 嘿嘿<br/>
 </p>
 
+                <div id="disqus_thread"></div>
+                <script>
+                    (function() {
+                        var d = document,
+                            s = d.createElement('script');
+                        s.src = 'https://uglymelon007.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <script id="dsq-count-scr" src="https://uglymelon007.disqus.com/count.js" async></script>
             </div>
             <div class="col-md-3" role="complementary">
                 <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" id="navSidebar">
-                    <ul class="nav bs-docs-sidenav">
-                    </ul>
                 </nav>
             </div>
         </div>
@@ -82,6 +92,9 @@ Axure这个工具 咋说呢 真难用 说完了 嘿嘿<br/>
     <script type="text/javascript" src="../js/docs.min.js"></script>
     <script type="text/javascript" src="../js/highlight.pack.js"></script>
     <script type="text/javascript" src="../js/vimwiki.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
 </body>
 
 </html>
