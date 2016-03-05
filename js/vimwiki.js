@@ -15,7 +15,7 @@ var kwiki = {
             if (win.scrollTop() + win.height() > thread.offset().top - 250) {
 			   var tag = '<script src=' + theJS + '></script>';
                $('body').append(tag);
-                win.unbind('scroll');
+                win.unbind('scroll', load);
             }
         }
         win.bind('scroll', load);
